@@ -1,0 +1,46 @@
+{
+  "dataset": "mesos_oros.csv",
+  "algorithm": "XGBoost",
+  "seed": 42,
+  "train_count": 168,
+  "test_count": 42,
+  "overall_mae_seconds": 0.3100677344056083,
+  "per_liquid": [
+    {
+      "liquid": "Αλατόνερο",
+      "count": 6,
+      "mean_actual_seconds": 0.7308054723500002,
+      "mae_seconds": 0.03377630740832748
+    },
+    {
+      "liquid": "Λάδι",
+      "count": 5,
+      "mean_actual_seconds": 0.8515116551800002,
+      "mae_seconds": 0.027262227299789422
+    },
+    {
+      "liquid": "Μέλι100",
+      "count": 7,
+      "mean_actual_seconds": 6.5007143749,
+      "mae_seconds": 1.6360895183735202
+    },
+    {
+      "liquid": "Μέλι30",
+      "count": 7,
+      "mean_actual_seconds": 0.7225611480857143,
+      "mae_seconds": 0.028511041992018364
+    },
+    {
+      "liquid": "Μέλι70",
+      "count": 9,
+      "mean_actual_seconds": 0.7315574591444445,
+      "mae_seconds": 0.09075685298947127
+    },
+    {
+      "liquid": "Νερό",
+      "count": 8,
+      "mean_actual_seconds": 0.5562776856625,
+      "mae_seconds": 0.02685753307782822
+    }
+  ]
+}
