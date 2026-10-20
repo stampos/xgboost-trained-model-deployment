@@ -1,0 +1,2728 @@
+{
+  "generated_at_utc": "2026-10-18T20:56:41.820032+00:00",
+  "dataset": "mesos_oros.csv",
+  "dataset_sha256": "b9d19183c806a9c85730b0bd2e017e08a4356775ffae8b6ebda0fcb620f07f32",
+  "seed": 42,
+  "protocol": "60/20/20: fit train only, rank validation MAE, report test separately",
+  "splits": {
+    "train": [
+      13,
+      130,
+      207,
+      95,
+      172,
+      77,
+      186,
+      80,
+      4,
+      210,
+      48,
+      30,
+      145,
+      108,
+      101,
+      36,
+      154,
+      38,
+      204,
+      27,
+      157,
+      58,
+      144,
+      202,
+      135,
+      178,
+      118,
+      146,
+      187,
+      151,
+      73,
+      90,
+      28,
+      123,
+      60,
+      29,
+      125,
+      9,
+      32,
+      206,
+      18,
+      190,
+      177,
+      164,
+      79,
+      40,
+      45,
+      111,
+      107,
+      22,
+      47,
+      176,
+      205,
+      195,
+      52,
+      75,
+      167,
+      55,
+      168,
+      180,
+      134,
+      49,
+      37,
+      87,
+      132,
+      69,
+      117,
+      113,
+      171,
+      1,
+      149,
+      119,
+      78,
+      39,
+      179,
+      114,
+      199,
+      35,
+      159,
+      71,
+      150,
+      100,
+      124,
+      25,
+      21,
+      92,
+      136,
+      34,
+      203,
+      6,
+      121,
+      158,
+      89,
+      104,
+      7,
+      120,
+      196,
+      91,
+      93,
+      112,
+      128,
+      41,
+      129,
+      139,
+      72,
+      194,
+      42,
+      122,
+      97,
+      142,
+      53,
+      64,
+      131,
+      54,
+      44,
+      192,
+      138,
+      115,
+      182,
+      103,
+      98,
+      153,
+      165,
+      140,
+      155,
+      106
+    ],
+    "validation": [
+      59,
+      116,
+      14,
+      43,
+      161,
+      189,
+      15,
+      86,
+      191,
+      12,
+      67,
+      88,
+      51,
+      3,
+      5,
+      65,
+      209,
+      81,
+      11,
+      50,
+      57,
+      66,
+      99,
+      147,
+      20,
+      184,
+      185,
+      162,
+      63,
+      62,
+      141,
+      23,
+      2,
+      8,
+      33,
+      170,
+      201,
+      82,
+      175,
+      152,
+      24,
+      84
+    ],
+    "test": [
+      31,
+      173,
+      85,
+      200,
+      61,
+      156,
+      46,
+      183,
+      10,
+      197,
+      137,
+      188,
+      208,
+      127,
+      16,
+      74,
+      166,
+      19,
+      169,
+      94,
+      76,
+      56,
+      148,
+      110,
+      109,
+      143,
+      26,
+      126,
+      17,
+      174,
+      193,
+      70,
+      102,
+      68,
+      105,
+      133,
+      181,
+      96,
+      83,
+      160,
+      198,
+      163
+    ]
+  },
+  "models": [
+    {
+      "algorithm": "Linear Regression",
+      "fit_time_s": 0.20490340003743768,
+      "validation": {
+        "mae": 1.8032585503864071,
+        "mse": 10.195193742514544,
+        "rmse": 3.1929913470779314,
+        "r2": 0.5483560774539993
+      },
+      "test": {
+        "mae": 2.183813131662357,
+        "mse": 8.178054346840769,
+        "rmse": 2.859729768149566,
+        "r2": 0.3677769274720438
+      }
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "fit_time_s": 0.01830530003644526,
+      "validation": {
+        "mae": 1.0163825228377457,
+        "mse": 2.1987511572322194,
+        "rmse": 1.4828186528474139,
+        "r2": 0.9025960052908233
+      },
+      "test": {
+        "mae": 1.291880340150533,
+        "mse": 3.2529642814940565,
+        "rmse": 1.8035975941140685,
+        "r2": 0.7485222052034486
+      }
+    },
+    {
+      "algorithm": "Random Forest",
+      "fit_time_s": 0.26799309998750687,
+      "validation": {
+        "mae": 0.41028568482120553,
+        "mse": 1.5322385028785037,
+        "rmse": 1.237836218115508,
+        "r2": 0.932122309276942
+      },
+      "test": {
+        "mae": 0.5331466932317892,
+        "mse": 1.8499734592041743,
+        "rmse": 1.3601372942479646,
+        "r2": 0.8569835984368267
+      }
+    },
+    {
+      "algorithm": "XGBoost",
+      "fit_time_s": 0.43828679993748665,
+      "validation": {
+        "mae": 0.6143004987117224,
+        "mse": 3.8822143237646904,
+        "rmse": 1.9703335564732918,
+        "r2": 0.8280191088436442
+      },
+      "test": {
+        "mae": 0.688959888011668,
+        "mse": 6.777280783965582,
+        "rmse": 2.603321106580128,
+        "r2": 0.47606691042856397
+      }
+    },
+    {
+      "algorithm": "Neural Network",
+      "fit_time_s": 1.5985132998321205,
+      "validation": {
+        "mae": 0.8009963789736086,
+        "mse": 3.752500990508692,
+        "rmse": 1.9371373184440726,
+        "r2": 0.8337653692990934
+      },
+      "test": {
+        "mae": 1.3877111002948048,
+        "mse": 8.548689963627185,
+        "rmse": 2.9238142833680776,
+        "r2": 0.3391240990002542
+      }
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "fit_time_s": null,
+      "validation": {
+        "mae": 1.9994305385731972,
+        "mse": 22.646244019155386,
+        "rmse": 4.758806995367157,
+        "r2": -0.003221590296390353
+      },
+      "test": {
+        "mae": 1.6518244448921091,
+        "mse": 12.948920058390897,
+        "rmse": 3.5984607901699994,
+        "r2": -0.0010456861780712146
+      }
+    }
+  ],
+  "test_predictions": [
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 31,
+      "actual_s": 1.587747712333333,
+      "prediction_s": 4.463068150441561,
+      "absolute_error_s": 2.8753204381082282
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 173,
+      "actual_s": 0.715870373433333,
+      "prediction_s": 1.8202953521738519,
+      "absolute_error_s": 1.1044249787405187
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 85,
+      "actual_s": 0.911940160533333,
+      "prediction_s": 5.949313956908046,
+      "absolute_error_s": 5.037373796374713
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 200,
+      "actual_s": 1.171096652333333,
+      "prediction_s": 2.439415575844327,
+      "absolute_error_s": 1.2683189235109942
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 61,
+      "actual_s": 1.357867616333333,
+      "prediction_s": 4.5192429058382295,
+      "absolute_error_s": 3.1613752895048965
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 156,
+      "actual_s": 0.348147133133333,
+      "prediction_s": -1.211319673830268,
+      "absolute_error_s": 1.559466806963601
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 46,
+      "actual_s": 0.269104737733333,
+      "prediction_s": -1.657757758793561,
+      "absolute_error_s": 1.9268624965268941
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 183,
+      "actual_s": 0.457944805633333,
+      "prediction_s": 0.4050084141967982,
+      "absolute_error_s": 0.05293639143653478
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 10,
+      "actual_s": 0.201254462533333,
+      "prediction_s": -2.235857263531921,
+      "absolute_error_s": 2.437111726065254
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 197,
+      "actual_s": 0.279330841733333,
+      "prediction_s": 0.7323336029287955,
+      "absolute_error_s": 0.45300276119546246
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 137,
+      "actual_s": 0.508504715633333,
+      "prediction_s": 1.9077030004250999,
+      "absolute_error_s": 1.3991982847917668
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 188,
+      "actual_s": 0.628326891133333,
+      "prediction_s": 1.3955660771609448,
+      "absolute_error_s": 0.7672391860276119
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 208,
+      "actual_s": 0.391863733733333,
+      "prediction_s": 0.10274962138033494,
+      "absolute_error_s": 0.28911411235299805
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 127,
+      "actual_s": 1.359527666333333,
+      "prediction_s": 4.323571187458283,
+      "absolute_error_s": 2.9640435211249496
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 16,
+      "actual_s": 0.238985266733333,
+      "prediction_s": -1.7139325141902297,
+      "absolute_error_s": 1.9529177809235627
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 74,
+      "actual_s": 2.227883409333333,
+      "prediction_s": 7.764055162030347,
+      "absolute_error_s": 5.5361717526970144
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 166,
+      "actual_s": 0.445717419733333,
+      "prediction_s": -0.37506287739968247,
+      "absolute_error_s": 0.8207802971330155
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 19,
+      "actual_s": 1.082712658333333,
+      "prediction_s": 3.4192186517581793,
+      "absolute_error_s": 2.336505993424846
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 169,
+      "actual_s": 2.242157719333333,
+      "prediction_s": 4.758088288548727,
+      "absolute_error_s": 2.515930569215394
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 94,
+      "actual_s": 15.892431773333332,
+      "prediction_s": 9.85175415939711,
+      "absolute_error_s": 6.0406776139362215
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 76,
+      "actual_s": 0.574444991433333,
+      "prediction_s": 6.578897938456507,
+      "absolute_error_s": 6.004452947023173
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 56,
+      "actual_s": 0.985308700033333,
+      "prediction_s": 2.2446824436955053,
+      "absolute_error_s": 1.2593737436621724
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 148,
+      "actual_s": 0.286855816233333,
+      "prediction_s": -1.940837125424756,
+      "absolute_error_s": 2.227692941658089
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 110,
+      "actual_s": 0.520585244233333,
+      "prediction_s": 1.0051612266321757,
+      "absolute_error_s": 0.4845759823988427
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 109,
+      "actual_s": 0.641169872433333,
+      "prediction_s": 2.7577969394332094,
+      "absolute_error_s": 2.116627066999876
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 143,
+      "actual_s": 0.234141533933333,
+      "prediction_s": -0.7893283945346039,
+      "absolute_error_s": 1.023469928467937
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 26,
+      "actual_s": 1.211780883333333,
+      "prediction_s": 2.188507688298836,
+      "absolute_error_s": 0.9767268049655031
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 126,
+      "actual_s": 0.311755190933333,
+      "prediction_s": -0.6019872762373288,
+      "absolute_error_s": 0.9137424671706618
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 17,
+      "actual_s": 0.262351850833333,
+      "prediction_s": -0.04049903395838661,
+      "absolute_error_s": 0.3028508847917196
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 174,
+      "actual_s": 0.512177928533333,
+      "prediction_s": 0.3544545741948053,
+      "absolute_error_s": 0.1577233543385277
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 193,
+      "actual_s": 1.007360776833333,
+      "prediction_s": 3.67012653930367,
+      "absolute_error_s": 2.662765762470337
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 70,
+      "actual_s": 0.436121404133333,
+      "prediction_s": 0.42994123857320377,
+      "absolute_error_s": 0.006180165560129236
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 102,
+      "actual_s": 2.139302289333333,
+      "prediction_s": 7.722680907185916,
+      "absolute_error_s": 5.583378617852583
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 68,
+      "actual_s": 1.375822484333333,
+      "prediction_s": 3.2885319423788877,
+      "absolute_error_s": 1.9127094580455546
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 105,
+      "actual_s": 0.305085446033333,
+      "prediction_s": 0.01460356366802884,
+      "absolute_error_s": 0.29048188236530414
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 133,
+      "actual_s": 1.644633234333333,
+      "prediction_s": 4.845495936799974,
+      "absolute_error_s": 3.200862702466641
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 181,
+      "actual_s": 0.522691355633333,
+      "prediction_s": 2.6262770406202876,
+      "absolute_error_s": 2.1035856849869545
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 96,
+      "actual_s": 5.456903730333333,
+      "prediction_s": 8.666596935823272,
+      "absolute_error_s": 3.2096932054899385
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 83,
+      "actual_s": 18.535427603333332,
+      "prediction_s": 10.560540373514762,
+      "absolute_error_s": 7.97488722981857
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 160,
+      "actual_s": 0.391807875633333,
+      "prediction_s": -0.8969876267413737,
+      "absolute_error_s": 1.2887955023747066
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 198,
+      "actual_s": 0.258273094933333,
+      "prediction_s": -0.7335071750502511,
+      "absolute_error_s": 0.991780269983584
+    },
+    {
+      "algorithm": "Linear Regression",
+      "row_id": 163,
+      "actual_s": 1.707141332333333,
+      "prediction_s": 4.236163539207036,
+      "absolute_error_s": 2.5290222068737025
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 31,
+      "actual_s": 1.587747712333333,
+      "prediction_s": 5.326679599871382,
+      "absolute_error_s": 3.7389318875380493
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 173,
+      "actual_s": 0.715870373433333,
+      "prediction_s": 0.9542307144612996,
+      "absolute_error_s": 0.23836034102796655
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 85,
+      "actual_s": 0.911940160533333,
+      "prediction_s": -0.21755864749664422,
+      "absolute_error_s": 1.1294988080299773
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 200,
+      "actual_s": 1.171096652333333,
+      "prediction_s": 0.952876053065268,
+      "absolute_error_s": 0.21822059926806503
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 61,
+      "actual_s": 1.357867616333333,
+      "prediction_s": 4.487124729719087,
+      "absolute_error_s": 3.1292571133857536
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 156,
+      "actual_s": 0.348147133133333,
+      "prediction_s": 0.36735272242641664,
+      "absolute_error_s": 0.019205589293083636
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 46,
+      "actual_s": 0.269104737733333,
+      "prediction_s": 0.8097811951964262,
+      "absolute_error_s": 0.5406764574630932
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 183,
+      "actual_s": 0.457944805633333,
+      "prediction_s": -0.1277294823187401,
+      "absolute_error_s": 0.5856742879520731
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 10,
+      "actual_s": 0.201254462533333,
+      "prediction_s": 0.7382316373405792,
+      "absolute_error_s": 0.5369771748072462
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 197,
+      "actual_s": 0.279330841733333,
+      "prediction_s": -0.9040771051247198,
+      "absolute_error_s": 1.1834079468580527
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 137,
+      "actual_s": 0.508504715633333,
+      "prediction_s": 0.7823538470128701,
+      "absolute_error_s": 0.27384913137953715
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 188,
+      "actual_s": 0.628326891133333,
+      "prediction_s": -0.5356941902256331,
+      "absolute_error_s": 1.1640210813589662
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 208,
+      "actual_s": 0.391863733733333,
+      "prediction_s": -0.5671800697147389,
+      "absolute_error_s": 0.9590438034480719
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 127,
+      "actual_s": 1.359527666333333,
+      "prediction_s": 4.063841193788076,
+      "absolute_error_s": 2.704313527454743
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 16,
+      "actual_s": 0.238985266733333,
+      "prediction_s": 0.18588928770168756,
+      "absolute_error_s": 0.05309597903164545
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 74,
+      "actual_s": 2.227883409333333,
+      "prediction_s": 5.488682405133812,
+      "absolute_error_s": 3.260798995800479
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 166,
+      "actual_s": 0.445717419733333,
+      "prediction_s": -0.23292300369506602,
+      "absolute_error_s": 0.678640423428399
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 19,
+      "actual_s": 1.082712658333333,
+      "prediction_s": 2.0872635965123636,
+      "absolute_error_s": 1.0045509381790305
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 169,
+      "actual_s": 2.242157719333333,
+      "prediction_s": 6.5675238480203095,
+      "absolute_error_s": 4.3253661286869765
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 94,
+      "actual_s": 15.892431773333332,
+      "prediction_s": 17.651458707384148,
+      "absolute_error_s": 1.7590269340508158
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 76,
+      "actual_s": 0.574444991433333,
+      "prediction_s": -0.20175484519987857,
+      "absolute_error_s": 0.7761998366332117
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 56,
+      "actual_s": 0.985308700033333,
+      "prediction_s": 1.2258557471190827,
+      "absolute_error_s": 0.2405470470857497
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 148,
+      "actual_s": 0.286855816233333,
+      "prediction_s": 0.7965284117423574,
+      "absolute_error_s": 0.5096725955090244
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 110,
+      "actual_s": 0.520585244233333,
+      "prediction_s": -0.9471156337151192,
+      "absolute_error_s": 1.4677008779484522
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 109,
+      "actual_s": 0.641169872433333,
+      "prediction_s": 0.03846668946114176,
+      "absolute_error_s": 0.6027031829721913
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 143,
+      "actual_s": 0.234141533933333,
+      "prediction_s": -0.05992301420542262,
+      "absolute_error_s": 0.2940645481387556
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 26,
+      "actual_s": 1.211780883333333,
+      "prediction_s": 1.0054058561382568,
+      "absolute_error_s": 0.20637502719507617
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 126,
+      "actual_s": 0.311755190933333,
+      "prediction_s": 0.16494674262015102,
+      "absolute_error_s": 0.14680844831318196
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 17,
+      "actual_s": 0.262351850833333,
+      "prediction_s": -0.4266866677719555,
+      "absolute_error_s": 0.6890385186052885
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 174,
+      "actual_s": 0.512177928533333,
+      "prediction_s": 0.11841848648347567,
+      "absolute_error_s": 0.39375944204985736
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 193,
+      "actual_s": 1.007360776833333,
+      "prediction_s": 1.3433675863644798,
+      "absolute_error_s": 0.3360068095311468
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 70,
+      "actual_s": 0.436121404133333,
+      "prediction_s": -0.46557828737632745,
+      "absolute_error_s": 0.9016996915096605
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 102,
+      "actual_s": 2.139302289333333,
+      "prediction_s": 5.256986363251039,
+      "absolute_error_s": 3.1176840739177063
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 68,
+      "actual_s": 1.375822484333333,
+      "prediction_s": 3.3204583839829382,
+      "absolute_error_s": 1.9446358996496051
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 105,
+      "actual_s": 0.305085446033333,
+      "prediction_s": 0.525339128211604,
+      "absolute_error_s": 0.22025368217827102
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 133,
+      "actual_s": 1.644633234333333,
+      "prediction_s": 5.750025213330977,
+      "absolute_error_s": 4.105391978997644
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 181,
+      "actual_s": 0.522691355633333,
+      "prediction_s": -0.896039686161517,
+      "absolute_error_s": 1.41873104179485
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 96,
+      "actual_s": 5.456903730333333,
+      "prediction_s": 9.369166607134447,
+      "absolute_error_s": 3.9122628768011145
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 83,
+      "actual_s": 18.535427603333332,
+      "prediction_s": 20.185069341727683,
+      "absolute_error_s": 1.649641738394351
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 160,
+      "actual_s": 0.391807875633333,
+      "prediction_s": -0.061968790932886764,
+      "absolute_error_s": 0.4537766665662198
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 198,
+      "actual_s": 0.258273094933333,
+      "prediction_s": 0.006750706550529034,
+      "absolute_error_s": 0.25152238838280394
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "row_id": 163,
+      "actual_s": 1.707141332333333,
+      "prediction_s": 4.824722098039531,
+      "absolute_error_s": 3.1175807657061974
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 31,
+      "actual_s": 1.587747712333333,
+      "prediction_s": 1.4567707903483302,
+      "absolute_error_s": 0.13097692198500277
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 173,
+      "actual_s": 0.715870373433333,
+      "prediction_s": 0.548107013767833,
+      "absolute_error_s": 0.16776335966550004
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 85,
+      "actual_s": 0.911940160533333,
+      "prediction_s": 0.8789395858148336,
+      "absolute_error_s": 0.03300057471849949
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 200,
+      "actual_s": 1.171096652333333,
+      "prediction_s": 1.1732426116138324,
+      "absolute_error_s": 0.002145959280499321
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 61,
+      "actual_s": 1.357867616333333,
+      "prediction_s": 1.3627377400833323,
+      "absolute_error_s": 0.004870123749999289
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 156,
+      "actual_s": 0.348147133133333,
+      "prediction_s": 0.3425937109108333,
+      "absolute_error_s": 0.005553422222499715
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 46,
+      "actual_s": 0.269104737733333,
+      "prediction_s": 0.255664107648333,
+      "absolute_error_s": 0.01344063008499996
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 183,
+      "actual_s": 0.457944805633333,
+      "prediction_s": 0.48327425985633177,
+      "absolute_error_s": 0.02532945422299876
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 10,
+      "actual_s": 0.201254462533333,
+      "prediction_s": 0.24354942714583294,
+      "absolute_error_s": 0.04229496461249993
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 197,
+      "actual_s": 0.279330841733333,
+      "prediction_s": 0.3461955113798332,
+      "absolute_error_s": 0.06686466964650017
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 137,
+      "actual_s": 0.508504715633333,
+      "prediction_s": 0.4801770815533329,
+      "absolute_error_s": 0.028327634080000108
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 188,
+      "actual_s": 0.628326891133333,
+      "prediction_s": 0.5124570784688317,
+      "absolute_error_s": 0.11586981266450125
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 208,
+      "actual_s": 0.391863733733333,
+      "prediction_s": 0.3881486562543329,
+      "absolute_error_s": 0.003715077479000073
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 127,
+      "actual_s": 1.359527666333333,
+      "prediction_s": 1.3616847333278321,
+      "absolute_error_s": 0.002157066994499024
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 16,
+      "actual_s": 0.238985266733333,
+      "prediction_s": 0.2702484603158323,
+      "absolute_error_s": 0.031263193582499266
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 74,
+      "actual_s": 2.227883409333333,
+      "prediction_s": 6.0269750873998245,
+      "absolute_error_s": 3.7990916780664916
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 166,
+      "actual_s": 0.445717419733333,
+      "prediction_s": 0.4621824442948325,
+      "absolute_error_s": 0.01646502456149951
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 19,
+      "actual_s": 1.082712658333333,
+      "prediction_s": 1.0489851005993323,
+      "absolute_error_s": 0.033727557734000824
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 169,
+      "actual_s": 2.242157719333333,
+      "prediction_s": 2.202216666483331,
+      "absolute_error_s": 0.039941052850001935
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 94,
+      "actual_s": 15.892431773333332,
+      "prediction_s": 11.851998639736296,
+      "absolute_error_s": 4.040433133597036
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 76,
+      "actual_s": 0.574444991433333,
+      "prediction_s": 4.973206487107324,
+      "absolute_error_s": 4.39876149567399
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 56,
+      "actual_s": 0.985308700033333,
+      "prediction_s": 0.9868843019468337,
+      "absolute_error_s": 0.0015756019135007016
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 148,
+      "actual_s": 0.286855816233333,
+      "prediction_s": 0.28975358318133365,
+      "absolute_error_s": 0.0028977669480006463
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 110,
+      "actual_s": 0.520585244233333,
+      "prediction_s": 0.504282106852332,
+      "absolute_error_s": 0.016303137381000976
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 109,
+      "actual_s": 0.641169872433333,
+      "prediction_s": 0.560515342219332,
+      "absolute_error_s": 0.08065453021400104
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 143,
+      "actual_s": 0.234141533933333,
+      "prediction_s": 0.21545032939173328,
+      "absolute_error_s": 0.018691204541599726
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 26,
+      "actual_s": 1.211780883333333,
+      "prediction_s": 1.2039873760068334,
+      "absolute_error_s": 0.007793507326499638
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 126,
+      "actual_s": 0.311755190933333,
+      "prediction_s": 0.33449965383683344,
+      "absolute_error_s": 0.022744462903500462
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 17,
+      "actual_s": 0.262351850833333,
+      "prediction_s": 0.29916728308233276,
+      "absolute_error_s": 0.03681543224899975
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 174,
+      "actual_s": 0.512177928533333,
+      "prediction_s": 0.47338799525633213,
+      "absolute_error_s": 0.038789933277000865
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 193,
+      "actual_s": 1.007360776833333,
+      "prediction_s": 1.0517480901938356,
+      "absolute_error_s": 0.04438731336050261
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 70,
+      "actual_s": 0.436121404133333,
+      "prediction_s": 0.42903451176483265,
+      "absolute_error_s": 0.007086892368500353
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 102,
+      "actual_s": 2.139302289333333,
+      "prediction_s": 5.008006940642328,
+      "absolute_error_s": 2.8687046513089953
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 68,
+      "actual_s": 1.375822484333333,
+      "prediction_s": 1.3457601306513323,
+      "absolute_error_s": 0.03006235368200083
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 105,
+      "actual_s": 0.305085446033333,
+      "prediction_s": 0.3293515211418336,
+      "absolute_error_s": 0.024266075108500595
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 133,
+      "actual_s": 1.644633234333333,
+      "prediction_s": 1.5148292995688315,
+      "absolute_error_s": 0.12980393476450147
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 181,
+      "actual_s": 0.522691355633333,
+      "prediction_s": 0.5348992494448319,
+      "absolute_error_s": 0.012207893811498893
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 96,
+      "actual_s": 5.456903730333333,
+      "prediction_s": 7.381573437859334,
+      "absolute_error_s": 1.924669707526001
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 83,
+      "actual_s": 18.535427603333332,
+      "prediction_s": 14.593730492223308,
+      "absolute_error_s": 3.941697111110024
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 160,
+      "actual_s": 0.391807875633333,
+      "prediction_s": 0.3743109399768332,
+      "absolute_error_s": 0.017496935656499846
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 198,
+      "actual_s": 0.258273094933333,
+      "prediction_s": 0.2937973205018329,
+      "absolute_error_s": 0.03552422556849988
+    },
+    {
+      "algorithm": "Random Forest",
+      "row_id": 163,
+      "actual_s": 1.707141332333333,
+      "prediction_s": 1.8351369695763324,
+      "absolute_error_s": 0.12799563724299934
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 31,
+      "actual_s": 1.587747712333333,
+      "prediction_s": 1.5694581270217896,
+      "absolute_error_s": 0.018289585311543455
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 173,
+      "actual_s": 0.715870373433333,
+      "prediction_s": 0.640625536441803,
+      "absolute_error_s": 0.07524483699153006
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 85,
+      "actual_s": 0.911940160533333,
+      "prediction_s": 1.0111969709396362,
+      "absolute_error_s": 0.09925681040630319
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 200,
+      "actual_s": 1.171096652333333,
+      "prediction_s": 1.1516624689102173,
+      "absolute_error_s": 0.01943418342311576
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 61,
+      "actual_s": 1.357867616333333,
+      "prediction_s": 1.383362054824829,
+      "absolute_error_s": 0.02549443849149613
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 156,
+      "actual_s": 0.348147133133333,
+      "prediction_s": 0.3310942053794861,
+      "absolute_error_s": 0.017052927753846925
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 46,
+      "actual_s": 0.269104737733333,
+      "prediction_s": 0.26944079995155334,
+      "absolute_error_s": 0.00033606221822035653
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 183,
+      "actual_s": 0.457944805633333,
+      "prediction_s": 0.4175567328929901,
+      "absolute_error_s": 0.040388072740342895
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 10,
+      "actual_s": 0.201254462533333,
+      "prediction_s": 0.2554633915424347,
+      "absolute_error_s": 0.05420892900910168
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 197,
+      "actual_s": 0.279330841733333,
+      "prediction_s": 0.30787891149520874,
+      "absolute_error_s": 0.02854806976187574
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 137,
+      "actual_s": 0.508504715633333,
+      "prediction_s": 0.5049916505813599,
+      "absolute_error_s": 0.00351306505197313
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 188,
+      "actual_s": 0.628326891133333,
+      "prediction_s": 0.6132643222808838,
+      "absolute_error_s": 0.015062568852449165
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 208,
+      "actual_s": 0.391863733733333,
+      "prediction_s": 0.35932639241218567,
+      "absolute_error_s": 0.03253734132114733
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 127,
+      "actual_s": 1.359527666333333,
+      "prediction_s": 1.4444435834884644,
+      "absolute_error_s": 0.08491591715513125
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 16,
+      "actual_s": 0.238985266733333,
+      "prediction_s": 0.2703421115875244,
+      "absolute_error_s": 0.03135684485419141
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 74,
+      "actual_s": 2.227883409333333,
+      "prediction_s": 3.7990221977233887,
+      "absolute_error_s": 1.5711387883900558
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 166,
+      "actual_s": 0.445717419733333,
+      "prediction_s": 0.4778796136379242,
+      "absolute_error_s": 0.032162193904591185
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 19,
+      "actual_s": 1.082712658333333,
+      "prediction_s": 1.0512645244598389,
+      "absolute_error_s": 0.03144813387349421
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 169,
+      "actual_s": 2.242157719333333,
+      "prediction_s": 2.388441562652588,
+      "absolute_error_s": 0.1462838433192548
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 94,
+      "actual_s": 15.892431773333332,
+      "prediction_s": 12.078922271728516,
+      "absolute_error_s": 3.813509501604816
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 76,
+      "actual_s": 0.574444991433333,
+      "prediction_s": 3.97290301322937,
+      "absolute_error_s": 3.398458021796037
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 56,
+      "actual_s": 0.985308700033333,
+      "prediction_s": 0.9351881742477417,
+      "absolute_error_s": 0.05012052578559134
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 148,
+      "actual_s": 0.286855816233333,
+      "prediction_s": 0.31075534224510193,
+      "absolute_error_s": 0.023899526011768923
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 110,
+      "actual_s": 0.520585244233333,
+      "prediction_s": 0.4564475119113922,
+      "absolute_error_s": 0.06413773232194075
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 109,
+      "actual_s": 0.641169872433333,
+      "prediction_s": 0.563467264175415,
+      "absolute_error_s": 0.07770260825791797
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 143,
+      "actual_s": 0.234141533933333,
+      "prediction_s": 0.23083969950675964,
+      "absolute_error_s": 0.0033018344265733635
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 26,
+      "actual_s": 1.211780883333333,
+      "prediction_s": 1.1346787214279175,
+      "absolute_error_s": 0.07710216190541552
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 126,
+      "actual_s": 0.311755190933333,
+      "prediction_s": 0.3430643081665039,
+      "absolute_error_s": 0.031309117233170924
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 17,
+      "actual_s": 0.262351850833333,
+      "prediction_s": 0.2875523567199707,
+      "absolute_error_s": 0.025200505886637692
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 174,
+      "actual_s": 0.512177928533333,
+      "prediction_s": 0.48603102564811707,
+      "absolute_error_s": 0.026146902885215928
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 193,
+      "actual_s": 1.007360776833333,
+      "prediction_s": 1.0808614492416382,
+      "absolute_error_s": 0.07350067240830516
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 70,
+      "actual_s": 0.436121404133333,
+      "prediction_s": 0.4480999708175659,
+      "absolute_error_s": 0.011978566684232916
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 102,
+      "actual_s": 2.139302289333333,
+      "prediction_s": 2.715104579925537,
+      "absolute_error_s": 0.575802290592204
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 68,
+      "actual_s": 1.375822484333333,
+      "prediction_s": 1.3715018033981323,
+      "absolute_error_s": 0.004320680935200771
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 105,
+      "actual_s": 0.305085446033333,
+      "prediction_s": 0.32597386837005615,
+      "absolute_error_s": 0.020888422336723167
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 133,
+      "actual_s": 1.644633234333333,
+      "prediction_s": 1.7072765827178955,
+      "absolute_error_s": 0.06264334838456254
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 181,
+      "actual_s": 0.522691355633333,
+      "prediction_s": 0.48269641399383545,
+      "absolute_error_s": 0.03999494163949757
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 96,
+      "actual_s": 5.456903730333333,
+      "prediction_s": 7.409707546234131,
+      "absolute_error_s": 1.9528038159007979
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 83,
+      "actual_s": 18.535427603333332,
+      "prediction_s": 34.4015998840332,
+      "absolute_error_s": 15.866172280699871
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 160,
+      "actual_s": 0.391807875633333,
+      "prediction_s": 0.4380738139152527,
+      "absolute_error_s": 0.04626593828191966
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 198,
+      "actual_s": 0.258273094933333,
+      "prediction_s": 0.2863177955150604,
+      "absolute_error_s": 0.028044700581727422
+    },
+    {
+      "algorithm": "XGBoost",
+      "row_id": 163,
+      "actual_s": 1.707141332333333,
+      "prediction_s": 2.0434799194335938,
+      "absolute_error_s": 0.33633858710026066
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 31,
+      "actual_s": 1.587747712333333,
+      "prediction_s": 7.826825455080512,
+      "absolute_error_s": 6.239077742747179
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 173,
+      "actual_s": 0.715870373433333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.20304203727411474
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 85,
+      "actual_s": 0.911940160533333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.39911182437411474
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 200,
+      "actual_s": 1.171096652333333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.6582683161741147
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 61,
+      "actual_s": 1.357867616333333,
+      "prediction_s": 5.78106034549512,
+      "absolute_error_s": 4.423192729161787
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 156,
+      "actual_s": 0.348147133133333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.1646812030258853
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 46,
+      "actual_s": 0.269104737733333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.2437235984258853
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 183,
+      "actual_s": 0.457944805633333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.05488353052588529
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 10,
+      "actual_s": 0.201254462533333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.3115738736258853
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 197,
+      "actual_s": 0.279330841733333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.2334974944258853
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 137,
+      "actual_s": 0.508504715633333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.004323620525885308
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 188,
+      "actual_s": 0.628326891133333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.11549855497411465
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 208,
+      "actual_s": 0.391863733733333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.1209646024258853
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 127,
+      "actual_s": 1.359527666333333,
+      "prediction_s": 3.8229665850194348,
+      "absolute_error_s": 2.4634389186861014
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 16,
+      "actual_s": 0.238985266733333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.2738430694258853
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 74,
+      "actual_s": 2.227883409333333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 1.7150550731741145
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 166,
+      "actual_s": 0.445717419733333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.06711091642588529
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 19,
+      "actual_s": 1.082712658333333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.5698843221741148
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 169,
+      "actual_s": 2.242157719333333,
+      "prediction_s": 14.571303218479057,
+      "absolute_error_s": 12.329145499145724
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 94,
+      "actual_s": 15.892431773333332,
+      "prediction_s": 19.027052934118515,
+      "absolute_error_s": 3.1346211607851835
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 76,
+      "actual_s": 0.574444991433333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.06161665527411475
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 56,
+      "actual_s": 0.985308700033333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.47248036387411474
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 148,
+      "actual_s": 0.286855816233333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.2259725199258853
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 110,
+      "actual_s": 0.520585244233333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.007756908074114666
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 109,
+      "actual_s": 0.641169872433333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.1283415362741147
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 143,
+      "actual_s": 0.234141533933333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.27868680222588527
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 26,
+      "actual_s": 1.211780883333333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.6989525471741147
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 126,
+      "actual_s": 0.311755190933333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.20107314522588532
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 17,
+      "actual_s": 0.262351850833333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.2504764853258853
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 174,
+      "actual_s": 0.512177928533333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.0006504076258853075
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 193,
+      "actual_s": 1.007360776833333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.4945324406741147
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 70,
+      "actual_s": 0.436121404133333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.0767069320258853
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 102,
+      "actual_s": 2.139302289333333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 1.6264739531741148
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 68,
+      "actual_s": 1.375822484333333,
+      "prediction_s": 3.739930878989931,
+      "absolute_error_s": 2.364108394656598
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 105,
+      "actual_s": 0.305085446033333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.20774289012588532
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 133,
+      "actual_s": 1.644633234333333,
+      "prediction_s": 10.080824630381713,
+      "absolute_error_s": 8.436191396048379
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 181,
+      "actual_s": 0.522691355633333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.00986301947411472
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 96,
+      "actual_s": 5.456903730333333,
+      "prediction_s": 5.487753104992141,
+      "absolute_error_s": 0.030849374658807882
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 83,
+      "actual_s": 18.535427603333332,
+      "prediction_s": 20.54000041383839,
+      "absolute_error_s": 2.0045728105050564
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 160,
+      "actual_s": 0.391807875633333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.12102046052588528
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 198,
+      "actual_s": 0.258273094933333,
+      "prediction_s": 0.5128283361592183,
+      "absolute_error_s": 0.2545552412258853
+    },
+    {
+      "algorithm": "Neural Network",
+      "row_id": 163,
+      "actual_s": 1.707141332333333,
+      "prediction_s": 8.313445173116781,
+      "absolute_error_s": 6.606303840783448
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 31,
+      "actual_s": 1.587747712333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.0016531680757141398
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 173,
+      "actual_s": 0.715870373433333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.8735305069757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 85,
+      "actual_s": 0.911940160533333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.6774607198757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 200,
+      "actual_s": 1.171096652333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.4183042280757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 61,
+      "actual_s": 1.357867616333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.23153326407571417
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 156,
+      "actual_s": 0.348147133133333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.2412537472757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 46,
+      "actual_s": 0.269104737733333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.3202961426757143
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 183,
+      "actual_s": 0.457944805633333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.131456074775714
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 10,
+      "actual_s": 0.201254462533333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.3881464178757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 197,
+      "actual_s": 0.279330841733333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.3100700386757143
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 137,
+      "actual_s": 0.508504715633333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.080896164775714
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 188,
+      "actual_s": 0.628326891133333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.9610739892757142
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 208,
+      "actual_s": 0.391863733733333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.197537146675714
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 127,
+      "actual_s": 1.359527666333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.22987321407571404
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 16,
+      "actual_s": 0.238985266733333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.3504156136757142
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 74,
+      "actual_s": 2.227883409333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.6384825289242857
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 166,
+      "actual_s": 0.445717419733333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.1436834606757142
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 19,
+      "actual_s": 1.082712658333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.5066882220757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 169,
+      "actual_s": 2.242157719333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.6527568389242859
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 94,
+      "actual_s": 15.892431773333332,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 14.303030892924285
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 76,
+      "actual_s": 0.574444991433333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.014955888975714
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 56,
+      "actual_s": 0.985308700033333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.6040921803757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 148,
+      "actual_s": 0.286855816233333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.3025450641757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 110,
+      "actual_s": 0.520585244233333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.0688156361757142
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 109,
+      "actual_s": 0.641169872433333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.9482310079757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 143,
+      "actual_s": 0.234141533933333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.355259346475714
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 26,
+      "actual_s": 1.211780883333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.37761999707571414
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 126,
+      "actual_s": 0.311755190933333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.2776456894757142
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 17,
+      "actual_s": 0.262351850833333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.327049029575714
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 174,
+      "actual_s": 0.512177928533333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.0772229518757142
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 193,
+      "actual_s": 1.007360776833333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.5820401035757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 70,
+      "actual_s": 0.436121404133333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.1532794762757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 102,
+      "actual_s": 2.139302289333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.549901408924286
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 68,
+      "actual_s": 1.375822484333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.21357839607571405
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 105,
+      "actual_s": 0.305085446033333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.2843154343757142
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 133,
+      "actual_s": 1.644633234333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.055232353924285826
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 181,
+      "actual_s": 0.522691355633333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.0667095247757141
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 96,
+      "actual_s": 5.456903730333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 3.8675028499242856
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 83,
+      "actual_s": 18.535427603333332,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 16.946026722924284
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 160,
+      "actual_s": 0.391807875633333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.1975930047757142
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 198,
+      "actual_s": 0.258273094933333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 1.3311277854757142
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "row_id": 163,
+      "actual_s": 1.707141332333333,
+      "prediction_s": 1.5894008804090471,
+      "absolute_error_s": 0.11774045192428595
+    }
+  ],
+  "test_mae_by_liquid": [
+    {
+      "algorithm": "Linear Regression",
+      "liquid": "Αλατόνερο",
+      "count": 6,
+      "mae": 1.8135722713798523
+    },
+    {
+      "algorithm": "Linear Regression",
+      "liquid": "Λάδι",
+      "count": 5,
+      "mae": 1.6533002306599294
+    },
+    {
+      "algorithm": "Linear Regression",
+      "liquid": "Μέλι100",
+      "count": 7,
+      "mae": 5.626662166170315
+    },
+    {
+      "algorithm": "Linear Regression",
+      "liquid": "Μέλι30",
+      "count": 7,
+      "mae": 1.6242188439025773
+    },
+    {
+      "algorithm": "Linear Regression",
+      "liquid": "Μέλι70",
+      "count": 9,
+      "mae": 1.4697007317517214
+    },
+    {
+      "algorithm": "Linear Regression",
+      "liquid": "Νερό",
+      "count": 8,
+      "mae": 1.0735928864955595
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "liquid": "Αλατόνερο",
+      "count": 6,
+      "mae": 1.0381615875593895
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "liquid": "Λάδι",
+      "count": 5,
+      "mae": 1.3513632418187724
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "liquid": "Μέλι100",
+      "count": 7,
+      "mae": 2.2293018948039505
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "liquid": "Μέλι30",
+      "count": 7,
+      "mae": 1.3601458327491456
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "liquid": "Μέλι70",
+      "count": 9,
+      "mae": 1.1144918333784977
+    },
+    {
+      "algorithm": "Polynomial Ridge",
+      "liquid": "Νερό",
+      "count": 8,
+      "mae": 0.7645784948242537
+    },
+    {
+      "algorithm": "Random Forest",
+      "liquid": "Αλατόνερο",
+      "count": 6,
+      "mae": 0.04714526291491703
+    },
+    {
+      "algorithm": "Random Forest",
+      "liquid": "Λάδι",
+      "count": 5,
+      "mae": 0.011407120359800228
+    },
+    {
+      "algorithm": "Random Forest",
+      "liquid": "Μέλι100",
+      "count": 7,
+      "mae": 3.000908336000148
+    },
+    {
+      "algorithm": "Random Forest",
+      "liquid": "Μέλι30",
+      "count": 7,
+      "mae": 0.04346526306371481
+    },
+    {
+      "algorithm": "Random Forest",
+      "liquid": "Μέλι70",
+      "count": 9,
+      "mae": 0.04839937077395574
+    },
+    {
+      "algorithm": "Random Forest",
+      "liquid": "Νερό",
+      "count": 8,
+      "mae": 0.03825555075425012
+    },
+    {
+      "algorithm": "XGBoost",
+      "liquid": "Αλατόνερο",
+      "count": 6,
+      "mae": 0.03960102680673066
+    },
+    {
+      "algorithm": "XGBoost",
+      "liquid": "Λάδι",
+      "count": 5,
+      "mae": 0.018450054822948304
+    },
+    {
+      "algorithm": "XGBoost",
+      "liquid": "Μέλι100",
+      "count": 7,
+      "mae": 3.8967345013414407
+    },
+    {
+      "algorithm": "XGBoost",
+      "liquid": "Μέλι30",
+      "count": 7,
+      "mae": 0.04930145867734568
+    },
+    {
+      "algorithm": "XGBoost",
+      "liquid": "Μέλι70",
+      "count": 9,
+      "mae": 0.07852184340832906
+    },
+    {
+      "algorithm": "XGBoost",
+      "liquid": "Νερό",
+      "count": 8,
+      "mae": 0.03468881884105763
+    },
+    {
+      "algorithm": "Neural Network",
+      "liquid": "Αλατόνερο",
+      "count": 6,
+      "mae": 1.3906346734121773
+    },
+    {
+      "algorithm": "Neural Network",
+      "liquid": "Λάδι",
+      "count": 5,
+      "mae": 1.516042403628854
+    },
+    {
+      "algorithm": "Neural Network",
+      "liquid": "Μέλι100",
+      "count": 7,
+      "mae": 1.281757264563644
+    },
+    {
+      "algorithm": "Neural Network",
+      "liquid": "Μέλι30",
+      "count": 7,
+      "mae": 1.6355526307086237
+    },
+    {
+      "algorithm": "Neural Network",
+      "liquid": "Μέλι70",
+      "count": 9,
+      "mae": 2.2218459652176223
+    },
+    {
+      "algorithm": "Neural Network",
+      "liquid": "Νερό",
+      "count": 8,
+      "mae": 0.2427578999875
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "liquid": "Αλατόνερο",
+      "count": 6,
+      "mae": 0.825262074725714
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "liquid": "Λάδι",
+      "count": 5,
+      "mae": 0.7045558918957142
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "liquid": "Μέλι100",
+      "count": 7,
+      "mae": 5.4281944303532645
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "liquid": "Μέλι30",
+      "count": 7,
+      "mae": 0.8492870715397958
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "liquid": "Μέλι70",
+      "count": 9,
+      "mae": 0.9957317081198414
+    },
+    {
+      "algorithm": "DummyRegressor",
+      "liquid": "Νερό",
+      "count": 8,
+      "mae": 0.9997898614132141
+    }
+  ],
+  "warnings": [],
+  "test_rows": [
+    {
+      "row_id": 10,
+      "liquid": "Αλατόνερο",
+      "height_cm": 10.0,
+      "shape": "Κύβος",
+      "mass_g": 77.0,
+      "time_s": 0.201254462533333
+    },
+    {
+      "row_id": 16,
+      "liquid": "Αλατόνερο",
+      "height_cm": 15.0,
+      "shape": "Κύβος",
+      "mass_g": 77.0,
+      "time_s": 0.238985266733333
+    },
+    {
+      "row_id": 17,
+      "liquid": "Αλατόνερο",
+      "height_cm": 15.0,
+      "shape": "Σφαίρα",
+      "mass_g": 13.0,
+      "time_s": 0.262351850833333
+    },
+    {
+      "row_id": 19,
+      "liquid": "Αλατόνερο",
+      "height_cm": 20.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 1.082712658333333
+    },
+    {
+      "row_id": 26,
+      "liquid": "Αλατόνερο",
+      "height_cm": 25.0,
+      "shape": "Δίσκος",
+      "mass_g": 66.0,
+      "time_s": 1.211780883333333
+    },
+    {
+      "row_id": 31,
+      "liquid": "Αλατόνερο",
+      "height_cm": 30.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 1.587747712333333
+    },
+    {
+      "row_id": 46,
+      "liquid": "Λάδι",
+      "height_cm": 10.0,
+      "shape": "Κύβος",
+      "mass_g": 77.0,
+      "time_s": 0.269104737733333
+    },
+    {
+      "row_id": 56,
+      "liquid": "Λάδι",
+      "height_cm": 20.0,
+      "shape": "Δίσκος",
+      "mass_g": 66.0,
+      "time_s": 0.985308700033333
+    },
+    {
+      "row_id": 61,
+      "liquid": "Λάδι",
+      "height_cm": 25.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 1.357867616333333
+    },
+    {
+      "row_id": 68,
+      "liquid": "Λάδι",
+      "height_cm": 30.0,
+      "shape": "Δίσκος",
+      "mass_g": 66.0,
+      "time_s": 1.375822484333333
+    },
+    {
+      "row_id": 70,
+      "liquid": "Λάδι",
+      "height_cm": 30.0,
+      "shape": "Κύβος",
+      "mass_g": 77.0,
+      "time_s": 0.436121404133333
+    },
+    {
+      "row_id": 74,
+      "liquid": "Μέλι100",
+      "height_cm": 5.0,
+      "shape": "Δίσκος",
+      "mass_g": 66.0,
+      "time_s": 2.227883409333333
+    },
+    {
+      "row_id": 76,
+      "liquid": "Μέλι100",
+      "height_cm": 5.0,
+      "shape": "Σφαίρα",
+      "mass_g": 13.0,
+      "time_s": 0.574444991433333
+    },
+    {
+      "row_id": 83,
+      "liquid": "Μέλι100",
+      "height_cm": 15.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 18.535427603333332
+    },
+    {
+      "row_id": 85,
+      "liquid": "Μέλι100",
+      "height_cm": 15.0,
+      "shape": "Κύβος",
+      "mass_g": 77.0,
+      "time_s": 0.911940160533333
+    },
+    {
+      "row_id": 94,
+      "liquid": "Μέλι100",
+      "height_cm": 25.0,
+      "shape": "Δίσκος",
+      "mass_g": 66.0,
+      "time_s": 15.892431773333332
+    },
+    {
+      "row_id": 96,
+      "liquid": "Μέλι100",
+      "height_cm": 25.0,
+      "shape": "Σφαίρα",
+      "mass_g": 13.0,
+      "time_s": 5.456903730333333
+    },
+    {
+      "row_id": 102,
+      "liquid": "Μέλι100",
+      "height_cm": 30.0,
+      "shape": "Σφαίρα",
+      "mass_g": 59.0,
+      "time_s": 2.139302289333333
+    },
+    {
+      "row_id": 105,
+      "liquid": "Μέλι30",
+      "height_cm": 5.0,
+      "shape": "Κύβος",
+      "mass_g": 2.0,
+      "time_s": 0.305085446033333
+    },
+    {
+      "row_id": 109,
+      "liquid": "Μέλι30",
+      "height_cm": 10.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 0.641169872433333
+    },
+    {
+      "row_id": 110,
+      "liquid": "Μέλι30",
+      "height_cm": 10.0,
+      "shape": "Δίσκος",
+      "mass_g": 66.0,
+      "time_s": 0.520585244233333
+    },
+    {
+      "row_id": 126,
+      "liquid": "Μέλι30",
+      "height_cm": 20.0,
+      "shape": "Σφαίρα",
+      "mass_g": 59.0,
+      "time_s": 0.311755190933333
+    },
+    {
+      "row_id": 127,
+      "liquid": "Μέλι30",
+      "height_cm": 25.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 1.359527666333333
+    },
+    {
+      "row_id": 133,
+      "liquid": "Μέλι30",
+      "height_cm": 30.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 1.644633234333333
+    },
+    {
+      "row_id": 137,
+      "liquid": "Μέλι30",
+      "height_cm": 30.0,
+      "shape": "Σφαίρα",
+      "mass_g": 13.0,
+      "time_s": 0.508504715633333
+    },
+    {
+      "row_id": 143,
+      "liquid": "Μέλι70",
+      "height_cm": 5.0,
+      "shape": "Σφαίρα",
+      "mass_g": 13.0,
+      "time_s": 0.234141533933333
+    },
+    {
+      "row_id": 148,
+      "liquid": "Μέλι70",
+      "height_cm": 10.0,
+      "shape": "Κύβος",
+      "mass_g": 77.0,
+      "time_s": 0.286855816233333
+    },
+    {
+      "row_id": 156,
+      "liquid": "Μέλι70",
+      "height_cm": 15.0,
+      "shape": "Σφαίρα",
+      "mass_g": 59.0,
+      "time_s": 0.348147133133333
+    },
+    {
+      "row_id": 160,
+      "liquid": "Μέλι70",
+      "height_cm": 20.0,
+      "shape": "Κύβος",
+      "mass_g": 77.0,
+      "time_s": 0.391807875633333
+    },
+    {
+      "row_id": 163,
+      "liquid": "Μέλι70",
+      "height_cm": 25.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 1.707141332333333
+    },
+    {
+      "row_id": 166,
+      "liquid": "Μέλι70",
+      "height_cm": 25.0,
+      "shape": "Κύβος",
+      "mass_g": 77.0,
+      "time_s": 0.445717419733333
+    },
+    {
+      "row_id": 169,
+      "liquid": "Μέλι70",
+      "height_cm": 30.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 2.242157719333333
+    },
+    {
+      "row_id": 173,
+      "liquid": "Μέλι70",
+      "height_cm": 30.0,
+      "shape": "Σφαίρα",
+      "mass_g": 13.0,
+      "time_s": 0.715870373433333
+    },
+    {
+      "row_id": 174,
+      "liquid": "Μέλι70",
+      "height_cm": 30.0,
+      "shape": "Σφαίρα",
+      "mass_g": 59.0,
+      "time_s": 0.512177928533333
+    },
+    {
+      "row_id": 181,
+      "liquid": "Νερό",
+      "height_cm": 10.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 0.522691355633333
+    },
+    {
+      "row_id": 183,
+      "liquid": "Νερό",
+      "height_cm": 10.0,
+      "shape": "Κύβος",
+      "mass_g": 2.0,
+      "time_s": 0.457944805633333
+    },
+    {
+      "row_id": 188,
+      "liquid": "Νερό",
+      "height_cm": 15.0,
+      "shape": "Δίσκος",
+      "mass_g": 66.0,
+      "time_s": 0.628326891133333
+    },
+    {
+      "row_id": 193,
+      "liquid": "Νερό",
+      "height_cm": 20.0,
+      "shape": "Δίσκος",
+      "mass_g": 11.0,
+      "time_s": 1.007360776833333
+    },
+    {
+      "row_id": 197,
+      "liquid": "Νερό",
+      "height_cm": 20.0,
+      "shape": "Σφαίρα",
+      "mass_g": 13.0,
+      "time_s": 0.279330841733333
+    },
+    {
+      "row_id": 198,
+      "liquid": "Νερό",
+      "height_cm": 20.0,
+      "shape": "Σφαίρα",
+      "mass_g": 59.0,
+      "time_s": 0.258273094933333
+    },
+    {
+      "row_id": 200,
+      "liquid": "Νερό",
+      "height_cm": 25.0,
+      "shape": "Δίσκος",
+      "mass_g": 66.0,
+      "time_s": 1.171096652333333
+    },
+    {
+      "row_id": 208,
+      "liquid": "Νερό",
+      "height_cm": 30.0,
+      "shape": "Κύβος",
+      "mass_g": 77.0,
+      "time_s": 0.391863733733333
+    }
+  ],
+  "test_summary": {
+    "rows": 42,
+    "same_test_as_80_20": true,
+    "liquids": {
+      "Αλατόνερο": 6,
+      "Λάδι": 5,
+      "Μέλι100": 7,
+      "Μέλι30": 7,
+      "Μέλι70": 9,
+      "Νερό": 8
+    },
+    "shapes": {
+      "Δίσκος": 19,
+      "Κύβος": 11,
+      "Σφαίρα": 12
+    },
+    "heights_cm": {
+      "5": 4,
+      "10": 7,
+      "15": 6,
+      "20": 7,
+      "25": 8,
+      "30": 10
+    },
+    "masses_g": {
+      "2": 2,
+      "11": 11,
+      "13": 7,
+      "59": 5,
+      "66": 8,
+      "77": 9
+    },
+    "time_min_s": 0.201254462533333,
+    "time_max_s": 18.535427603333332,
+    "time_mean_s": 1.7057037711547614,
+    "time_median_s": 0.601385941283333,
+    "per_liquid": [
+      {
+        "liquid": "Αλατόνερο",
+        "rows": 6,
+        "time_min_s": 0.201254462533333,
+        "time_max_s": 1.587747712333333,
+        "time_mean_s": 0.764138805683333
+      },
+      {
+        "liquid": "Λάδι",
+        "rows": 5,
+        "time_min_s": 0.269104737733333,
+        "time_max_s": 1.375822484333333,
+        "time_mean_s": 0.884844988513333
+      },
+      {
+        "liquid": "Μέλι100",
+        "rows": 7,
+        "time_min_s": 0.574444991433333,
+        "time_max_s": 18.535427603333332,
+        "time_mean_s": 6.534047708233333
+      },
+      {
+        "liquid": "Μέλι30",
+        "rows": 7,
+        "time_min_s": 0.305085446033333,
+        "time_max_s": 1.644633234333333,
+        "time_mean_s": 0.7558944814190474
+      },
+      {
+        "liquid": "Μέλι70",
+        "rows": 9,
+        "time_min_s": 0.234141533933333,
+        "time_max_s": 2.242157719333333,
+        "time_mean_s": 0.7648907924777775
+      },
+      {
+        "liquid": "Νερό",
+        "rows": 8,
+        "time_min_s": 0.258273094933333,
+        "time_max_s": 1.171096652333333,
+        "time_mean_s": 0.589611018995833
+      }
+    ]
+  },
+  "selection_by_validation_mae": "Random Forest"
+}

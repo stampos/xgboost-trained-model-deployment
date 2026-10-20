@@ -42,14 +42,31 @@ Run checks with `python -m unittest discover -s tests -v`.
 
 ## Separate offline model evaluation
 
+For the independent-test protocol, run `python tmp/run_independent_test_cv.py`.
+It first reserves 20% of each dataset as an untouched test set. Five-fold
+cross-validation then runs only on the remaining 80%; each fold fits on four
+parts and validates on the fifth. Models are ranked by mean CV validation MAE.
+After CV, every algorithm is fitted again on all of the outer 80% and evaluated
+once on the independent test set. Fold scores, their means and population
+standard deviations, test scores, row assignments, and the selected model are
+written to `outputs/ml-comparison-independent-cv/results.json`. The test set
+does not participate in model selection.
+
+The optional `python tmp/train_app_model.py` command still writes the legacy
+`xgboost_nomeli100_model.joblib` on the 144 no-Meli100 outer-training rows;
+the interactive app now trains the selected model instead of loading that file.
+
+The commands below describe older, separate comparisons and reports.
+
 Run `python tmp/run_all_algorithms.py` to evaluate all five regression models on
-each dataset. The script also refreshes the legacy `xgboost_model.joblib`,
-using the XGBoost trained on the full dataset's **train rows only**.
-Then run `python tmp/build_results_workbook.py` for the Excel
-report. All commands should be run from the project root.
+each dataset under the older 64/16/20 protocol. This also refreshes the legacy
+`xgboost_model.joblib`, which the app no longer loads. Then run
+`python tmp/build_results_workbook.py` for that protocol's Excel report. All
+commands should be run from the project root.
 
 For each dataset, `evaluation.split_rows` shuffles the row positions with seed
-42 and assigns 60% to train, 20% to validation, and 20% to test. Every model
+42 and first reserves 20% for the independent test set. The remaining 80% is
+split 80/20 into train and validation (about 64%/16%/20% overall). Every model
 uses exactly the same rows, features, and target within that dataset. Feature
 encoding and scaling are fitted on train rows inside each model's pipeline.
 The five models are Linear Regression, Polynomial Ridge, Random Forest,
@@ -73,13 +90,13 @@ python algorithms/xgboost_MAE_per_liquid.py
 The older report under `outputs/ml-comparison-20260918/` is a historical
 five-fold analysis and does not follow this protocol.
 
-Run `python tmp/run_two_splits.py` to reproduce the two comparisons recorded
-in the Google Sheet: 60/20/20 and 80/20 for both datasets. It writes
+Run `python tmp/run_two_splits.py` to compare nested 64/16/20 and direct
+80/20 holdouts for both datasets. It writes
 `tmp/two_split_results.json`. In the 80/20 comparison, the held-out 20% is
-the same test rows as in the 60/20/20 comparison; its training set includes
+the same test rows as in the 64/16/20 comparison; its training set includes
 the other version's training and validation rows.
 
 Run `python tmp/run_fold_metrics.py` for five-fold cross-validation over each
 entire dataset, matching the method in the original Google Sheet tabs. It
 writes `tmp/fold_metrics_full.json`, which backs the two updated `5-fold` tabs.
-This is a separate analysis from the 60/20/20 and 80/20 holdout results.
+This is a separate analysis from the 64/16/20 and 80/20 holdout results.

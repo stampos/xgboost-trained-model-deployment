@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-10-09T10:38:54.319065+00:00",
+  "generated_at_utc": "2026-10-19T13:00:59.744611+00:00",
   "protocol": {
     "method": "shared_holdout",
-    "train_fraction": 0.6000000000000001,
-    "validation_fraction": 0.2,
+    "train_fraction": 0.64,
+    "validation_fraction": 0.16,
     "test_fraction": 0.2,
     "shuffle": true,
     "random_state": 42,
@@ -25,8 +25,8 @@
       "missing_values": 0,
       "liquids": 6,
       "shapes": 3,
-      "train_rows": 126,
-      "validation_rows": 42,
+      "train_rows": 134,
+      "validation_rows": 34,
       "test_rows": 42
     },
     {
@@ -36,12 +36,52 @@
       "missing_values": 0,
       "liquids": 5,
       "shapes": 3,
-      "train_rows": 108,
-      "validation_rows": 36,
+      "train_rows": 115,
+      "validation_rows": 29,
       "test_rows": 36
     }
   ],
   "split_rows": [
+    {
+      "dataset": "mesos_oros.csv",
+      "row": 33,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros.csv",
+      "row": 170,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros.csv",
+      "row": 201,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros.csv",
+      "row": 82,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros.csv",
+      "row": 175,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros.csv",
+      "row": 152,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros.csv",
+      "row": 24,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros.csv",
+      "row": 84,
+      "split": "train"
+    },
     {
       "dataset": "mesos_oros.csv",
       "row": 13,
@@ -844,46 +884,6 @@
     },
     {
       "dataset": "mesos_oros.csv",
-      "row": 33,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "row": 170,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "row": 201,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "row": 82,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "row": 175,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "row": 152,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "row": 24,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "row": 84,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros.csv",
       "row": 31,
       "split": "test"
     },
@@ -1091,6 +1091,41 @@
       "dataset": "mesos_oros.csv",
       "row": 163,
       "split": "test"
+    },
+    {
+      "dataset": "mesos_oros_nomeli.csv",
+      "row": 158,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros_nomeli.csv",
+      "row": 105,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros_nomeli.csv",
+      "row": 164,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros_nomeli.csv",
+      "row": 28,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros_nomeli.csv",
+      "row": 3,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros_nomeli.csv",
+      "row": 91,
+      "split": "train"
+    },
+    {
+      "dataset": "mesos_oros_nomeli.csv",
+      "row": 8,
+      "split": "train"
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -1779,41 +1814,6 @@
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
-      "row": 158,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "row": 105,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "row": 164,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "row": 28,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "row": 3,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "row": 91,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "row": 8,
-      "split": "validation"
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
       "row": 20,
       "split": "test"
     },
@@ -1997,201 +1997,201 @@
     {
       "dataset": "mesos_oros.csv",
       "algorithm": "Linear Regression",
-      "train_rows": 126,
-      "validation_rows": 42,
+      "train_rows": 134,
+      "validation_rows": 34,
       "test_rows": 42,
-      "fit_time_s": 0.0415754999849014,
+      "fit_time_s": 0.03976129996590316,
       "validation": {
-        "mae": 1.8032585503864074,
-        "mse": 10.195193742514537,
-        "rmse": 3.1929913470779305,
-        "r2": 0.5483560774539995
+        "mae": 1.8116400149593161,
+        "mse": 11.734338132325478,
+        "rmse": 3.425542020224752,
+        "r2": 0.5656778759592624
       },
       "test": {
-        "mae": 2.1838131316623524,
-        "mse": 8.178054346840753,
-        "rmse": 2.859729768149563,
-        "r2": 0.36777692747204516
+        "mae": 2.1446505645266547,
+        "mse": 7.9423099183856865,
+        "rmse": 2.8182104105949377,
+        "r2": 0.3860016861454556
       }
     },
     {
       "dataset": "mesos_oros.csv",
       "algorithm": "Polynomial Ridge",
-      "train_rows": 126,
-      "validation_rows": 42,
+      "train_rows": 134,
+      "validation_rows": 34,
       "test_rows": 42,
-      "fit_time_s": 0.01560559996869415,
+      "fit_time_s": 0.017393500078469515,
       "validation": {
-        "mae": 1.0163825228377468,
-        "mse": 2.198751157232222,
-        "rmse": 1.4828186528474148,
-        "r2": 0.9025960052908232
+        "mae": 0.9153392344643816,
+        "mse": 1.6006022328555678,
+        "rmse": 1.2651490951091764,
+        "r2": 0.9407570368538196
       },
       "test": {
-        "mae": 1.2918803401505332,
-        "mse": 3.2529642814940565,
-        "rmse": 1.8035975941140685,
-        "r2": 0.7485222052034487
+        "mae": 1.203703904230022,
+        "mse": 3.051959379974592,
+        "rmse": 1.7469857984467394,
+        "r2": 0.7640613458158985
       }
     },
     {
       "dataset": "mesos_oros.csv",
       "algorithm": "Random Forest",
-      "train_rows": 126,
-      "validation_rows": 42,
+      "train_rows": 134,
+      "validation_rows": 34,
       "test_rows": 42,
-      "fit_time_s": 0.35633579996647313,
+      "fit_time_s": 0.26641709986142814,
       "validation": {
-        "mae": 0.4121053383088759,
-        "mse": 1.5435375636159885,
-        "rmse": 1.2423918720017402,
-        "r2": 0.931621764388689
+        "mae": 0.4714602776900032,
+        "mse": 1.8978205518599447,
+        "rmse": 1.3776140794358718,
+        "r2": 0.9297561188507677
       },
       "test": {
-        "mae": 0.5411509080732965,
-        "mse": 1.898337973621847,
-        "rmse": 1.3778018629766209,
-        "r2": 0.8532446697614168
+        "mae": 0.5372977600121799,
+        "mse": 2.008364718787072,
+        "rmse": 1.4171678513101658,
+        "r2": 0.8447388022361562
       }
     },
     {
       "dataset": "mesos_oros.csv",
       "algorithm": "XGBoost",
-      "train_rows": 126,
-      "validation_rows": 42,
+      "train_rows": 134,
+      "validation_rows": 34,
       "test_rows": 42,
-      "fit_time_s": 0.259444999974221,
+      "fit_time_s": 0.27662849985063076,
       "validation": {
-        "mae": 0.6143005060203871,
-        "mse": 3.8822146250208958,
-        "rmse": 1.9703336329213121,
-        "r2": 0.8280190954980876
+        "mae": 0.6043829160730932,
+        "mse": 4.161693949436327,
+        "rmse": 2.0400230266926713,
+        "r2": 0.8459635528358119
       },
       "test": {
-        "mae": 0.6889598968104487,
-        "mse": 6.777281158530899,
-        "rmse": 2.6033211785200265,
-        "r2": 0.4760668814719413
+        "mae": 0.7075913077162266,
+        "mse": 6.8477749321161765,
+        "rmse": 2.616825353766693,
+        "r2": 0.4706172001369925
       }
     },
     {
       "dataset": "mesos_oros.csv",
       "algorithm": "Neural Network",
-      "train_rows": 126,
-      "validation_rows": 42,
+      "train_rows": 134,
+      "validation_rows": 34,
       "test_rows": 42,
-      "fit_time_s": 1.7576565999770537,
+      "fit_time_s": 1.806865000165999,
       "validation": {
-        "mae": 0.8001670285930573,
-        "mse": 3.739824002654845,
-        "rmse": 1.9338624570157115,
-        "r2": 0.8343269559314792
+        "mae": 0.46798300809784443,
+        "mse": 0.7839186945214357,
+        "rmse": 0.8853918310677119,
+        "r2": 0.9709848797060088
       },
       "test": {
-        "mae": 1.3843497646564333,
-        "mse": 8.504528496213878,
-        "rmse": 2.9162524747034295,
-        "r2": 0.34253810157730613
+        "mae": 0.44516221022218094,
+        "mse": 0.553191576378886,
+        "rmse": 0.7437684964953046,
+        "r2": 0.9572342682890155
       }
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "algorithm": "Linear Regression",
-      "train_rows": 108,
-      "validation_rows": 36,
+      "train_rows": 115,
+      "validation_rows": 29,
       "test_rows": 36,
-      "fit_time_s": 0.008350399963092059,
+      "fit_time_s": 0.0070448999758809805,
       "validation": {
-        "mae": 0.16769925797096674,
-        "mse": 0.04197129876685669,
-        "rmse": 0.20486897951338728,
-        "r2": 0.7831897238180661
+        "mae": 0.16247191905706546,
+        "mse": 0.04001070472912769,
+        "rmse": 0.20002676003257086,
+        "r2": 0.7935298478002494
       },
       "test": {
-        "mae": 0.15563858899328245,
-        "mse": 0.06952525050455788,
-        "rmse": 0.2636764124918228,
-        "r2": 0.7740403704111198
+        "mae": 0.15582448619265796,
+        "mse": 0.06936508468571714,
+        "rmse": 0.26337252074906586,
+        "r2": 0.7766822498546533
       }
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "algorithm": "Polynomial Ridge",
-      "train_rows": 108,
-      "validation_rows": 36,
+      "train_rows": 115,
+      "validation_rows": 29,
       "test_rows": 36,
-      "fit_time_s": 0.011345800012350082,
+      "fit_time_s": 0.008847300196066499,
       "validation": {
-        "mae": 0.08644156572835811,
-        "mse": 0.017328771188756267,
-        "rmse": 0.13163879059288058,
-        "r2": 0.9104851225072262
+        "mae": 0.09362189940972297,
+        "mse": 0.019687313358685465,
+        "rmse": 0.14031148690925296,
+        "r2": 0.8984061237338623
       },
       "test": {
-        "mae": 0.08993266734863439,
-        "mse": 0.018698154817882454,
-        "rmse": 0.13674119649133706,
-        "r2": 0.9392303068887573
+        "mae": 0.0908232334772913,
+        "mse": 0.018076638974405073,
+        "rmse": 0.13444939187071495,
+        "r2": 0.941803079110418
       }
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "algorithm": "Random Forest",
-      "train_rows": 108,
-      "validation_rows": 36,
+      "train_rows": 115,
+      "validation_rows": 29,
       "test_rows": 36,
-      "fit_time_s": 0.2866834999877028,
+      "fit_time_s": 0.23783429991453886,
       "validation": {
-        "mae": 0.06930430702866408,
-        "mse": 0.00974889643802914,
-        "rmse": 0.09873650002926547,
-        "r2": 0.9496403258584112
+        "mae": 0.06423845125828263,
+        "mse": 0.008670202071486763,
+        "rmse": 0.09311391985888448,
+        "r2": 0.9552585251016774
       },
       "test": {
-        "mae": 0.07015926528444973,
-        "mse": 0.017447357701797853,
-        "rmse": 0.13208844651141088,
-        "r2": 0.943295443669858
+        "mae": 0.06320285787391408,
+        "mse": 0.015452039006142679,
+        "rmse": 0.12430623076154582,
+        "r2": 0.9502528598985412
       }
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "algorithm": "XGBoost",
-      "train_rows": 108,
-      "validation_rows": 36,
+      "train_rows": 115,
+      "validation_rows": 29,
       "test_rows": 36,
-      "fit_time_s": 0.04229249997297302,
+      "fit_time_s": 0.03546379995532334,
       "validation": {
-        "mae": 0.0725574924287043,
-        "mse": 0.012781514684005959,
-        "rmse": 0.11305536114667875,
-        "r2": 0.9339747920583513
+        "mae": 0.06479258970697982,
+        "mse": 0.011396087558866145,
+        "rmse": 0.10675245926378532,
+        "r2": 0.9411919397898574
       },
       "test": {
-        "mae": 0.08445850122369121,
-        "mse": 0.021771757033493558,
-        "rmse": 0.14755255685176574,
-        "r2": 0.929240986273544
+        "mae": 0.07015555097360522,
+        "mse": 0.015790722594436486,
+        "rmse": 0.1256611419430704,
+        "r2": 0.9491624834174684
       }
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "algorithm": "Neural Network",
-      "train_rows": 108,
-      "validation_rows": 36,
+      "train_rows": 115,
+      "validation_rows": 29,
       "test_rows": 36,
-      "fit_time_s": 0.3011837000376545,
+      "fit_time_s": 0.27320769988000393,
       "validation": {
-        "mae": 0.41418260628382614,
-        "mse": 0.32890027564499724,
-        "rmse": 0.5734982786765774,
-        "r2": -0.6989934001093221
+        "mae": 0.40932306003865965,
+        "mse": 0.32156662864126456,
+        "rmse": 0.5670684514600196,
+        "r2": -0.6594036822747582
       },
       "test": {
-        "mae": 0.43945030680449304,
-        "mse": 0.4345087338510758,
-        "rmse": 0.6591727647977241,
-        "r2": -0.41216941818405806
+        "mae": 0.4411695500269115,
+        "mse": 0.434075628997979,
+        "rmse": 0.6588441613902175,
+        "r2": -0.3974868379381513
       }
     }
   ],
@@ -2200,221 +2200,221 @@
       "dataset": "mesos_oros.csv",
       "split": "validation",
       "liquid": "Αλατόνερο",
-      "count": 12,
-      "actual_mean": 0.45774232454166675,
-      "prediction_mean": 0.46761298179626465,
-      "mae": 0.023502024680855552,
-      "overall_mae": 0.6143005060203871
+      "count": 10,
+      "actual_mean": 0.42715273238333296,
+      "prediction_mean": 0.4461008906364441,
+      "mae": 0.025226481435715264,
+      "overall_mae": 0.6043829160730932
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "validation",
       "liquid": "Λάδι",
       "count": 10,
-      "actual_mean": 0.7767107091100001,
-      "prediction_mean": 0.7913790941238403,
-      "mae": 0.032980419599164416,
-      "overall_mae": 0.6143005060203871
+      "actual_mean": 0.8100440424433331,
+      "prediction_mean": 0.8298920392990112,
+      "mae": 0.03798975500867732,
+      "overall_mae": 0.6043829160730932
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "validation",
       "liquid": "Μέλι100",
-      "count": 6,
-      "actual_mean": 9.268330017933335,
-      "prediction_mean": 11.668296813964844,
-      "mae": 4.121975592436858,
-      "overall_mae": 0.6143005060203871
+      "count": 4,
+      "actual_mean": 12.235882598583332,
+      "prediction_mean": 14.52323055267334,
+      "mae": 4.884577103339529,
+      "overall_mae": 0.6043829160730932
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "validation",
       "liquid": "Μέλι30",
       "count": 1,
-      "actual_mean": 0.7078300066,
-      "prediction_mean": 0.6002568006515503,
-      "mae": 0.10757320594844966,
-      "overall_mae": 0.6143005060203871
+      "actual_mean": 0.741163339933333,
+      "prediction_mean": 0.6023328900337219,
+      "mae": 0.13883044989961113,
+      "overall_mae": 0.6043829160730932
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "validation",
       "liquid": "Μέλι70",
-      "count": 6,
-      "actual_mean": 0.6878265418833333,
-      "prediction_mean": 0.6979305744171143,
-      "mae": 0.04681373971987406,
-      "overall_mae": 0.6143005060203871
+      "count": 4,
+      "actual_mean": 0.491788586308333,
+      "prediction_mean": 0.48941269516944885,
+      "mae": 0.04193874171239098,
+      "overall_mae": 0.6043829160730932
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "validation",
       "liquid": "Νερό",
-      "count": 7,
-      "actual_mean": 0.42517847991428565,
-      "prediction_mean": 0.4235210716724396,
-      "mae": 0.0097833659722155,
-      "overall_mae": 0.6143005060203871
+      "count": 5,
+      "actual_mean": 0.355943428753333,
+      "prediction_mean": 0.36356666684150696,
+      "mae": 0.014392590386790976,
+      "overall_mae": 0.6043829160730932
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "test",
       "liquid": "Αλατόνερο",
       "count": 6,
-      "actual_mean": 0.7308054723500002,
-      "prediction_mean": 0.7281265258789062,
-      "mae": 0.039601021839676946,
-      "overall_mae": 0.6889598968104487
+      "actual_mean": 0.764138805683333,
+      "prediction_mean": 0.754638671875,
+      "mae": 0.04285373919556403,
+      "overall_mae": 0.7075913077162266
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "test",
       "liquid": "Λάδι",
       "count": 5,
-      "actual_mean": 0.8515116551800002,
-      "prediction_mean": 0.8481852412223816,
-      "mae": 0.018450028398222386,
-      "overall_mae": 0.6889598968104487
+      "actual_mean": 0.884844988513333,
+      "prediction_mean": 0.8820131421089172,
+      "mae": 0.02399204103492103,
+      "overall_mae": 0.7075913077162266
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "test",
       "liquid": "Μέλι100",
       "count": 7,
-      "actual_mean": 6.5007143749,
-      "prediction_mean": 9.30787467956543,
-      "mae": 3.8967346517722103,
-      "overall_mae": 0.6889598968104487
+      "actual_mean": 6.534047708233333,
+      "prediction_mean": 9.273618698120117,
+      "mae": 3.9909210202149277,
+      "overall_mae": 0.7075913077162266
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "test",
       "liquid": "Μέλι30",
       "count": 7,
-      "actual_mean": 0.7225611480857143,
-      "prediction_mean": 0.7303330302238464,
-      "mae": 0.04930144618875342,
-      "overall_mae": 0.6889598968104487
+      "actual_mean": 0.7558944814190474,
+      "prediction_mean": 0.7683060765266418,
+      "mae": 0.05144788662890289,
+      "overall_mae": 0.7075913077162266
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "test",
       "liquid": "Μέλι70",
       "count": 9,
-      "actual_mean": 0.7315574591444445,
-      "prediction_mean": 0.7830245494842529,
-      "mae": 0.07852184859614073,
-      "overall_mae": 0.6889598968104487
+      "actual_mean": 0.7648907924777775,
+      "prediction_mean": 0.8257668614387512,
+      "mae": 0.09228805911687046,
+      "overall_mae": 0.7075913077162266
     },
     {
       "dataset": "mesos_oros.csv",
       "split": "test",
       "liquid": "Νερό",
       "count": 8,
-      "actual_mean": 0.5562776856625,
-      "prediction_mean": 0.5541123151779175,
-      "mae": 0.03468875873970756,
-      "overall_mae": 0.6889598968104487
+      "actual_mean": 0.589611018995833,
+      "prediction_mean": 0.5893903970718384,
+      "mae": 0.026822175471859784,
+      "overall_mae": 0.7075913077162266
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "split": "validation",
       "liquid": "Αλατόνερο",
-      "count": 7,
-      "actual_mean": 0.5388745783714286,
-      "prediction_mean": 0.5104673504829407,
-      "mae": 0.041334438944661614,
-      "overall_mae": 0.0725574924287043
+      "count": 4,
+      "actual_mean": 0.7234262850833331,
+      "prediction_mean": 0.6857548356056213,
+      "mae": 0.05726264144059373,
+      "overall_mae": 0.06479258970697982
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "split": "validation",
       "liquid": "Λάδι",
       "count": 4,
-      "actual_mean": 0.6134066621750001,
-      "prediction_mean": 0.655387818813324,
-      "mae": 0.06701995314928014,
-      "overall_mae": 0.0725574924287043
+      "actual_mean": 0.6551411973583331,
+      "prediction_mean": 0.686906099319458,
+      "mae": 0.06094022918787374,
+      "overall_mae": 0.06479258970697982
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "split": "validation",
       "liquid": "Μέλι30",
-      "count": 10,
-      "actual_mean": 0.6020482167900001,
-      "prediction_mean": 0.5834084749221802,
-      "mae": 0.04456171697357558,
-      "overall_mae": 0.0725574924287043
+      "count": 8,
+      "actual_mean": 0.46475339104583296,
+      "prediction_mean": 0.46403348445892334,
+      "mae": 0.01771616346663128,
+      "overall_mae": 0.06479258970697982
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "split": "validation",
       "liquid": "Μέλι70",
       "count": 8,
-      "actual_mean": 0.8976364834125001,
-      "prediction_mean": 0.8737155199050903,
-      "mae": 0.14991481347201843,
-      "overall_mae": 0.0725574924287043
+      "actual_mean": 0.9309698167458329,
+      "prediction_mean": 0.9209719896316528,
+      "mae": 0.14292097954271812,
+      "overall_mae": 0.06479258970697982
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "split": "validation",
       "liquid": "Νερό",
-      "count": 7,
-      "actual_mean": 0.8590808631571427,
-      "prediction_mean": 0.8468930125236511,
-      "mae": 0.0585304521016713,
-      "overall_mae": 0.0725574924287043
+      "count": 5,
+      "actual_mean": 0.934614251093333,
+      "prediction_mean": 0.9407361745834351,
+      "mae": 0.024215294982749925,
+      "overall_mae": 0.06479258970697982
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "split": "test",
       "liquid": "Αλατόνερο",
       "count": 8,
-      "actual_mean": 0.711419914675,
-      "prediction_mean": 0.6849434971809387,
-      "mae": 0.03894572446789113,
-      "overall_mae": 0.08445850122369121
+      "actual_mean": 0.744753248008333,
+      "prediction_mean": 0.7170397043228149,
+      "mae": 0.038477634982992365,
+      "overall_mae": 0.07015555097360522
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "split": "test",
       "liquid": "Λάδι",
       "count": 9,
-      "actual_mean": 0.8372134083222222,
-      "prediction_mean": 0.839884877204895,
-      "mae": 0.06802366816592559,
-      "overall_mae": 0.08445850122369121
+      "actual_mean": 0.8818204444999996,
+      "prediction_mean": 0.8761746287345886,
+      "mae": 0.047921218509247014,
+      "overall_mae": 0.07015555097360522
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "split": "test",
       "liquid": "Μέλι30",
       "count": 4,
-      "actual_mean": 0.78396485455,
-      "prediction_mean": 0.8396415710449219,
-      "mae": 0.10628830661729816,
-      "overall_mae": 0.08445850122369121
+      "actual_mean": 0.825668387108333,
+      "prediction_mean": 0.8470979332923889,
+      "mae": 0.07831079624559706,
+      "overall_mae": 0.07015555097360522
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "split": "test",
       "liquid": "Μέλι70",
       "count": 9,
-      "actual_mean": 0.7945481076111112,
-      "prediction_mean": 0.7897301316261292,
-      "mae": 0.17134532095142269,
-      "overall_mae": 0.08445850122369121
+      "actual_mean": 0.8278814409444442,
+      "prediction_mean": 0.8258500695228577,
+      "mae": 0.14806454120999415,
+      "overall_mae": 0.07015555097360522
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
       "split": "test",
       "liquid": "Νερό",
       "count": 6,
-      "actual_mean": 0.21171184601999996,
-      "prediction_mean": 0.23577018082141876,
-      "mae": 0.024911019964071354,
-      "overall_mae": 0.08445850122369121
+      "actual_mean": 0.245045179353333,
+      "prediction_mean": 0.26848912239074707,
+      "mae": 0.023443955455048404,
+      "overall_mae": 0.07015555097360522
     }
   ],
   "xgboost_predictions": [
@@ -2426,9 +2426,9 @@
       "height_cm": 20.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.3420695592,
-      "prediction_s": 0.361151784658432,
-      "absolute_error_s": 0.019082225458432023
+      "actual_s": 0.375402892533333,
+      "prediction_s": 0.3956413269042969,
+      "absolute_error_s": 0.020238434370963898
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2438,9 +2438,9 @@
       "height_cm": 15.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.7078300066,
-      "prediction_s": 0.6002568006515503,
-      "absolute_error_s": 0.10757320594844966
+      "actual_s": 0.741163339933333,
+      "prediction_s": 0.6023328900337219,
+      "absolute_error_s": 0.13883044989961113
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2450,9 +2450,9 @@
       "height_cm": 15.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.6799995993,
-      "prediction_s": 0.6492407321929932,
-      "absolute_error_s": 0.030758867107006815
+      "actual_s": 0.713332932633333,
+      "prediction_s": 0.6953516602516174,
+      "absolute_error_s": 0.01798127238171554
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2462,9 +2462,9 @@
       "height_cm": 10.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 0.6164195438,
-      "prediction_s": 0.5551312565803528,
-      "absolute_error_s": 0.061288287219647186
+      "actual_s": 0.649752877133333,
+      "prediction_s": 0.5995945334434509,
+      "absolute_error_s": 0.050158343689882035
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2474,9 +2474,9 @@
       "height_cm": 20.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.4223322092,
-      "prediction_s": 0.4560461640357971,
-      "absolute_error_s": 0.033713954835797144
+      "actual_s": 0.455665542533333,
+      "prediction_s": 0.42463260889053345,
+      "absolute_error_s": 0.031032933642799576
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2486,9 +2486,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.6902810918,
-      "prediction_s": 0.6888149976730347,
-      "absolute_error_s": 0.0014660941269653005
+      "actual_s": 0.723614425133333,
+      "prediction_s": 0.7316637635231018,
+      "absolute_error_s": 0.008049338389768845
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2498,9 +2498,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.7154300706,
-      "prediction_s": 0.7683135867118835,
-      "absolute_error_s": 0.05288351611188358
+      "actual_s": 0.748763403933333,
+      "prediction_s": 0.8004918098449707,
+      "absolute_error_s": 0.05172840591163774
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2510,9 +2510,9 @@
       "height_cm": 15.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 2.527196523,
-      "prediction_s": 3.9465253353118896,
-      "absolute_error_s": 1.4193288123118895
+      "actual_s": 2.560529856333333,
+      "prediction_s": 3.9868414402008057,
+      "absolute_error_s": 1.4263115838674727
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2522,9 +2522,9 @@
       "height_cm": 15.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.1991687505,
-      "prediction_s": 0.20445477962493896,
-      "absolute_error_s": 0.0052860291249389735
+      "actual_s": 0.232502083833333,
+      "prediction_s": 0.24155458807945251,
+      "absolute_error_s": 0.009052504246119503
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2534,9 +2534,9 @@
       "height_cm": 10.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.1713203375,
-      "prediction_s": 0.1891121119260788,
-      "absolute_error_s": 0.017791774426078794
+      "actual_s": 0.204653670833333,
+      "prediction_s": 0.22325865924358368,
+      "absolute_error_s": 0.018604988410250684
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2546,9 +2546,9 @@
       "height_cm": 30.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.532671148,
-      "prediction_s": 1.5697150230407715,
-      "absolute_error_s": 0.03704387504077156
+      "actual_s": 1.566004481333333,
+      "prediction_s": 1.6119403839111328,
+      "absolute_error_s": 0.04593590257779989
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2558,9 +2558,9 @@
       "height_cm": 20.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 24.66606415,
-      "prediction_s": 34.360530853271484,
-      "absolute_error_s": 9.694466703271484
+      "actual_s": 24.699397483333332,
+      "prediction_s": 34.965423583984375,
+      "absolute_error_s": 10.266026100651043
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2570,9 +2570,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.7160594243,
-      "prediction_s": 0.7841199636459351,
-      "absolute_error_s": 0.06806053934593503
+      "actual_s": 0.749392757633333,
+      "prediction_s": 0.8349083065986633,
+      "absolute_error_s": 0.08551554896533031
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2582,9 +2582,9 @@
       "height_cm": 5.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.2574832286,
-      "prediction_s": 0.2749027907848358,
-      "absolute_error_s": 0.017419562184835813
+      "actual_s": 0.290816561933333,
+      "prediction_s": 0.31117188930511475,
+      "absolute_error_s": 0.02035532737178175
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2594,9 +2594,9 @@
       "height_cm": 5.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.1189453169,
-      "prediction_s": 0.11355456709861755,
-      "absolute_error_s": 0.005390749801382447
+      "actual_s": 0.152278650233333,
+      "prediction_s": 0.14598222076892853,
+      "absolute_error_s": 0.006296429464404479
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2606,9 +2606,9 @@
       "height_cm": 25.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.4186509725,
-      "prediction_s": 0.42452454566955566,
-      "absolute_error_s": 0.005873573169555668
+      "actual_s": 0.451984305833333,
+      "prediction_s": 0.44820380210876465,
+      "absolute_error_s": 0.0037805037245683404
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2618,9 +2618,9 @@
       "height_cm": 30.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.4035592336,
-      "prediction_s": 0.3848603069782257,
-      "absolute_error_s": 0.018698926621774303
+      "actual_s": 0.436892566933333,
+      "prediction_s": 0.41996920108795166,
+      "absolute_error_s": 0.016923365845381344
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2630,9 +2630,9 @@
       "height_cm": 10.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 1.285645288,
-      "prediction_s": 3.9439966678619385,
-      "absolute_error_s": 2.6583513798619385
+      "actual_s": 1.318978621333333,
+      "prediction_s": 3.970489978790283,
+      "absolute_error_s": 2.6515113574569504
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2642,9 +2642,9 @@
       "height_cm": 10.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.1748821436,
-      "prediction_s": 0.223762646317482,
-      "absolute_error_s": 0.04888050271748198
+      "actual_s": 0.208215476933333,
+      "prediction_s": 0.26029863953590393,
+      "absolute_error_s": 0.052083162602570926
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2654,9 +2654,9 @@
       "height_cm": 15.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.6216843355,
-      "prediction_s": 0.6700734496116638,
-      "absolute_error_s": 0.0483891141116638
+      "actual_s": 0.655017668833333,
+      "prediction_s": 0.702951192855835,
+      "absolute_error_s": 0.04793352402250195
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2666,9 +2666,9 @@
       "height_cm": 20.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.9563964481,
-      "prediction_s": 0.9803094863891602,
-      "absolute_error_s": 0.023913038289160138
+      "actual_s": 0.989729781433333,
+      "prediction_s": 1.035622239112854,
+      "absolute_error_s": 0.04589245767952099
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2678,9 +2678,9 @@
       "height_cm": 25.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.3472095897,
-      "prediction_s": 0.3183821737766266,
-      "absolute_error_s": 0.0288274159233734
+      "actual_s": 0.380542923033333,
+      "prediction_s": 0.36672845482826233,
+      "absolute_error_s": 0.013814468205070651
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2690,9 +2690,9 @@
       "height_cm": 30.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 20.3312911,
-      "prediction_s": 15.165265083312988,
-      "absolute_error_s": 5.166026016687013
+      "actual_s": 20.364624433333333,
+      "prediction_s": 15.170165061950684,
+      "absolute_error_s": 5.194459371382649
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2702,9 +2702,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.7383669957,
-      "prediction_s": 0.7472752928733826,
-      "absolute_error_s": 0.008908297173382596
+      "actual_s": 0.771700329033333,
+      "prediction_s": 0.769953191280365,
+      "absolute_error_s": 0.0017471377529679755
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2714,9 +2714,9 @@
       "height_cm": 20.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.8718019365,
-      "prediction_s": 0.8838329911231995,
-      "absolute_error_s": 0.012031054623199422
+      "actual_s": 0.905135269833333,
+      "prediction_s": 0.9342366456985474,
+      "absolute_error_s": 0.02910137586521433
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2726,9 +2726,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.1629232988,
-      "prediction_s": 0.18244585394859314,
-      "absolute_error_s": 0.019522555148593135
+      "actual_s": 0.196256632133333,
+      "prediction_s": 0.2251373827457428,
+      "absolute_error_s": 0.0288807506124098
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2738,9 +2738,9 @@
       "height_cm": 10.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.1571181024,
-      "prediction_s": 0.15617212653160095,
-      "absolute_error_s": 0.0009459758683990349
+      "actual_s": 0.190451435733333,
+      "prediction_s": 0.1995084285736084,
+      "absolute_error_s": 0.00905699284027539
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2750,9 +2750,9 @@
       "height_cm": 20.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.352997271,
-      "prediction_s": 0.3800654709339142,
-      "absolute_error_s": 0.027068199933914183
+      "actual_s": 0.386330604333333,
+      "prediction_s": 0.3304814100265503,
+      "absolute_error_s": 0.0558491943067827
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2762,9 +2762,9 @@
       "height_cm": 25.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 1.123204987,
-      "prediction_s": 1.15908682346344,
-      "absolute_error_s": 0.0358818364634399
+      "actual_s": 1.156538320333333,
+      "prediction_s": 1.2002114057540894,
+      "absolute_error_s": 0.04367308542075632
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2774,9 +2774,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 1.092741083,
-      "prediction_s": 1.0912967920303345,
-      "absolute_error_s": 0.0014442909696654738
+      "actual_s": 1.126074416333333,
+      "prediction_s": 1.103119134902954,
+      "absolute_error_s": 0.022955281430378838
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2786,9 +2786,9 @@
       "height_cm": 5.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.320124536,
-      "prediction_s": 0.4211873710155487,
-      "absolute_error_s": 0.10106283501554869
+      "actual_s": 0.353457869333333,
+      "prediction_s": 0.4325835704803467,
+      "absolute_error_s": 0.07912570114701367
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2798,9 +2798,9 @@
       "height_cm": 20.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.2936576241,
-      "prediction_s": 0.2836671471595764,
-      "absolute_error_s": 0.009990476940423598
+      "actual_s": 0.326990957433333,
+      "prediction_s": 0.31987714767456055,
+      "absolute_error_s": 0.00711380975877246
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2810,9 +2810,9 @@
       "height_cm": 5.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.2255152195,
-      "prediction_s": 0.2403184175491333,
-      "absolute_error_s": 0.014803198049133298
+      "actual_s": 0.258848552833333,
+      "prediction_s": 0.2881537079811096,
+      "absolute_error_s": 0.029305155147776596
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2822,105 +2822,9 @@
       "height_cm": 10.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.4291585139,
-      "prediction_s": 0.4545234441757202,
-      "absolute_error_s": 0.025364930275720232
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "split": "validation",
-      "row": 33,
-      "liquid": "Αλατόνερο",
-      "height_cm": 30.0,
-      "shape": "Κύβος",
-      "mass_g": 2.0,
-      "actual_s": 1.30870052,
-      "prediction_s": 1.2730522155761719,
-      "absolute_error_s": 0.03564830442382805
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "split": "validation",
-      "row": 170,
-      "liquid": "Μέλι70",
-      "height_cm": 30.0,
-      "shape": "Δίσκος",
-      "mass_g": 66.0,
-      "actual_s": 1.518584403,
-      "prediction_s": 1.4605064392089844,
-      "absolute_error_s": 0.0580779637910156
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "split": "validation",
-      "row": 201,
-      "liquid": "Νερό",
-      "height_cm": 25.0,
-      "shape": "Κύβος",
-      "mass_g": 2.0,
-      "actual_s": 1.093338499,
-      "prediction_s": 1.0969706773757935,
-      "absolute_error_s": 0.003632178375793549
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "split": "validation",
-      "row": 82,
-      "liquid": "Μέλι100",
-      "height_cm": 10.0,
-      "shape": "Σφαίρα",
-      "mass_g": 59.0,
-      "actual_s": 0.4489249546,
-      "prediction_s": 0.4767597019672394,
-      "absolute_error_s": 0.0278347473672394
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "split": "validation",
-      "row": 175,
-      "liquid": "Νερό",
-      "height_cm": 5.0,
-      "shape": "Δίσκος",
-      "mass_g": 11.0,
-      "actual_s": 0.2698603833,
-      "prediction_s": 0.2509285807609558,
-      "absolute_error_s": 0.018931802539044196
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "split": "validation",
-      "row": 152,
-      "liquid": "Μέλι70",
-      "height_cm": 15.0,
-      "shape": "Δίσκος",
-      "mass_g": 66.0,
-      "actual_s": 0.7745538364,
-      "prediction_s": 0.7225026488304138,
-      "absolute_error_s": 0.052051187569586155
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "split": "validation",
-      "row": 24,
-      "liquid": "Αλατόνερο",
-      "height_cm": 20.0,
-      "shape": "Σφαίρα",
-      "mass_g": 59.0,
-      "actual_s": 0.246013384,
-      "prediction_s": 0.2570747435092926,
-      "absolute_error_s": 0.011061359509292601
-    },
-    {
-      "dataset": "mesos_oros.csv",
-      "split": "validation",
-      "row": 84,
-      "liquid": "Μέλι100",
-      "height_cm": 15.0,
-      "shape": "Δίσκος",
-      "mass_g": 66.0,
-      "actual_s": 6.350858092,
-      "prediction_s": 12.116703987121582,
-      "absolute_error_s": 5.765845895121582
+      "actual_s": 0.462491847233333,
+      "prediction_s": 0.4821867346763611,
+      "absolute_error_s": 0.01969488744302811
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2930,9 +2834,9 @@
       "height_cm": 30.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.554414379,
-      "prediction_s": 1.5361248254776,
-      "absolute_error_s": 0.018289553522399915
+      "actual_s": 1.587747712333333,
+      "prediction_s": 1.5563890933990479,
+      "absolute_error_s": 0.031358618934285154
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2942,9 +2846,9 @@
       "height_cm": 30.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.6825370401,
-      "prediction_s": 0.6072922348976135,
-      "absolute_error_s": 0.07524480520238652
+      "actual_s": 0.715870373433333,
+      "prediction_s": 0.6864585876464844,
+      "absolute_error_s": 0.029411785786848665
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2954,9 +2858,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.8786068272,
-      "prediction_s": 0.977863609790802,
-      "absolute_error_s": 0.09925678259080195
+      "actual_s": 0.911940160533333,
+      "prediction_s": 0.9961535334587097,
+      "absolute_error_s": 0.08421337292537667
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2966,9 +2870,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 1.137763319,
-      "prediction_s": 1.1183292865753174,
-      "absolute_error_s": 0.019434032424682668
+      "actual_s": 1.171096652333333,
+      "prediction_s": 1.1378536224365234,
+      "absolute_error_s": 0.033243029896809606
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2978,9 +2882,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.324534283,
-      "prediction_s": 1.3500288724899292,
-      "absolute_error_s": 0.02549458948992922
+      "actual_s": 1.357867616333333,
+      "prediction_s": 1.410189151763916,
+      "absolute_error_s": 0.052321535430583044
     },
     {
       "dataset": "mesos_oros.csv",
@@ -2990,9 +2894,9 @@
       "height_cm": 15.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.3148137998,
-      "prediction_s": 0.297760933637619,
-      "absolute_error_s": 0.017052866162380997
+      "actual_s": 0.348147133133333,
+      "prediction_s": 0.34042003750801086,
+      "absolute_error_s": 0.0077270956253221446
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3002,9 +2906,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.2357714044,
-      "prediction_s": 0.23610736429691315,
-      "absolute_error_s": 0.00033595989691315165
+      "actual_s": 0.269104737733333,
+      "prediction_s": 0.2696838974952698,
+      "absolute_error_s": 0.0005791597619367872
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3014,9 +2918,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.4246114723,
-      "prediction_s": 0.3842235207557678,
-      "absolute_error_s": 0.04038795154423219
+      "actual_s": 0.457944805633333,
+      "prediction_s": 0.4240674078464508,
+      "absolute_error_s": 0.0338773977868822
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3026,9 +2930,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.1679211292,
-      "prediction_s": 0.22213003039360046,
-      "absolute_error_s": 0.05420890119360047
+      "actual_s": 0.201254462533333,
+      "prediction_s": 0.24083225429058075,
+      "absolute_error_s": 0.03957779175724774
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3038,9 +2942,9 @@
       "height_cm": 20.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.2459975084,
-      "prediction_s": 0.2745456099510193,
-      "absolute_error_s": 0.028548101551019278
+      "actual_s": 0.279330841733333,
+      "prediction_s": 0.3091118335723877,
+      "absolute_error_s": 0.029780991839054693
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3050,9 +2954,9 @@
       "height_cm": 30.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.4751713823,
-      "prediction_s": 0.4716583788394928,
-      "absolute_error_s": 0.0035130034605072025
+      "actual_s": 0.508504715633333,
+      "prediction_s": 0.5171422958374023,
+      "absolute_error_s": 0.00863758020406935
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3062,9 +2966,9 @@
       "height_cm": 15.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.5949935578,
-      "prediction_s": 0.5799311399459839,
-      "absolute_error_s": 0.015062417854016075
+      "actual_s": 0.628326891133333,
+      "prediction_s": 0.60321044921875,
+      "absolute_error_s": 0.025116441914582954
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3074,9 +2978,9 @@
       "height_cm": 30.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.3585304004,
-      "prediction_s": 0.32599306106567383,
-      "absolute_error_s": 0.032537339334326176
+      "actual_s": 0.391863733733333,
+      "prediction_s": 0.3840939402580261,
+      "absolute_error_s": 0.007769793475306874
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3086,9 +2990,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.326194333,
-      "prediction_s": 1.411110281944275,
-      "absolute_error_s": 0.08491594894427501
+      "actual_s": 1.359527666333333,
+      "prediction_s": 1.4547996520996094,
+      "absolute_error_s": 0.09527198576627627
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3098,9 +3002,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.2056519334,
-      "prediction_s": 0.2370087206363678,
-      "absolute_error_s": 0.03135678723636781
+      "actual_s": 0.238985266733333,
+      "prediction_s": 0.26271727681159973,
+      "absolute_error_s": 0.023732010078266724
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3110,9 +3014,9 @@
       "height_cm": 5.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 2.194550076,
-      "prediction_s": 3.7656898498535156,
-      "absolute_error_s": 1.5711397738535156
+      "actual_s": 2.227883409333333,
+      "prediction_s": 3.973539113998413,
+      "absolute_error_s": 1.7456557046650802
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3122,9 +3026,9 @@
       "height_cm": 25.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.4123840864,
-      "prediction_s": 0.44454628229141235,
-      "absolute_error_s": 0.03216219589141234
+      "actual_s": 0.445717419733333,
+      "prediction_s": 0.4641921818256378,
+      "absolute_error_s": 0.01847476209230481
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3134,9 +3038,9 @@
       "height_cm": 20.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.049379325,
-      "prediction_s": 1.0179311037063599,
-      "absolute_error_s": 0.03144822129364022
+      "actual_s": 1.082712658333333,
+      "prediction_s": 1.0465645790100098,
+      "absolute_error_s": 0.03614807932332331
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3146,9 +3050,9 @@
       "height_cm": 30.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 2.208824386,
-      "prediction_s": 2.3551082611083984,
-      "absolute_error_s": 0.14628387510839858
+      "actual_s": 2.242157719333333,
+      "prediction_s": 2.5406651496887207,
+      "absolute_error_s": 0.2985074303553876
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3158,9 +3062,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 15.85909844,
-      "prediction_s": 12.045589447021484,
-      "absolute_error_s": 3.813508992978516
+      "actual_s": 15.892431773333332,
+      "prediction_s": 11.512704849243164,
+      "absolute_error_s": 4.379726924090168
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3170,9 +3074,9 @@
       "height_cm": 5.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.5411116581,
-      "prediction_s": 3.9395697116851807,
-      "absolute_error_s": 3.3984580535851805
+      "actual_s": 0.574444991433333,
+      "prediction_s": 3.9652652740478516,
+      "absolute_error_s": 3.3908202826145186
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3182,9 +3086,9 @@
       "height_cm": 20.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.9519753667,
-      "prediction_s": 0.9018548727035522,
-      "absolute_error_s": 0.0501204939964478
+      "actual_s": 0.985308700033333,
+      "prediction_s": 0.9471846222877502,
+      "absolute_error_s": 0.038124077745582796
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3194,9 +3098,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.2535224829,
-      "prediction_s": 0.2774220407009125,
-      "absolute_error_s": 0.023899557800912463
+      "actual_s": 0.286855816233333,
+      "prediction_s": 0.3013995885848999,
+      "absolute_error_s": 0.014543772351566897
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3206,9 +3110,9 @@
       "height_cm": 10.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.4872519109,
-      "prediction_s": 0.4231140911579132,
-      "absolute_error_s": 0.06413781974208677
+      "actual_s": 0.520585244233333,
+      "prediction_s": 0.44672319293022156,
+      "absolute_error_s": 0.07386205130311141
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3218,9 +3122,9 @@
       "height_cm": 10.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 0.6078365391,
-      "prediction_s": 0.5301340222358704,
-      "absolute_error_s": 0.07770251686412966
+      "actual_s": 0.641169872433333,
+      "prediction_s": 0.5784047245979309,
+      "absolute_error_s": 0.0627651478354021
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3230,9 +3134,9 @@
       "height_cm": 5.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.2008082006,
-      "prediction_s": 0.1975063532590866,
-      "absolute_error_s": 0.0033018473409133775
+      "actual_s": 0.234141533933333,
+      "prediction_s": 0.22358347475528717,
+      "absolute_error_s": 0.010558059178045837
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3242,9 +3146,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 1.17844755,
-      "prediction_s": 1.101345419883728,
-      "absolute_error_s": 0.07710213011627198
+      "actual_s": 1.211780883333333,
+      "prediction_s": 1.1222258806228638,
+      "absolute_error_s": 0.08955500271046923
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3254,9 +3158,9 @@
       "height_cm": 20.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.2784218576,
-      "prediction_s": 0.3097309470176697,
-      "absolute_error_s": 0.03130908941766969
+      "actual_s": 0.311755190933333,
+      "prediction_s": 0.33410972356796265,
+      "absolute_error_s": 0.022354532634629665
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3266,9 +3170,9 @@
       "height_cm": 15.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.2290185175,
-      "prediction_s": 0.25421905517578125,
-      "absolute_error_s": 0.02520053767578126
+      "actual_s": 0.262351850833333,
+      "prediction_s": 0.299102783203125,
+      "absolute_error_s": 0.03675093236979199
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3278,9 +3182,9 @@
       "height_cm": 30.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.4788445952,
-      "prediction_s": 0.4526976943016052,
-      "absolute_error_s": 0.026146900898394776
+      "actual_s": 0.512177928533333,
+      "prediction_s": 0.47113895416259766,
+      "absolute_error_s": 0.04103897437073534
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3290,9 +3194,9 @@
       "height_cm": 20.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 0.9740274435,
-      "prediction_s": 1.0475281476974487,
-      "absolute_error_s": 0.0735007041974487
+      "actual_s": 1.007360776833333,
+      "prediction_s": 1.078540325164795,
+      "absolute_error_s": 0.0711795483314619
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3302,9 +3206,9 @@
       "height_cm": 30.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.4027880708,
-      "prediction_s": 0.4147665202617645,
-      "absolute_error_s": 0.011978449461764518
+      "actual_s": 0.436121404133333,
+      "prediction_s": 0.42541325092315674,
+      "absolute_error_s": 0.010708153210176263
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3314,9 +3218,9 @@
       "height_cm": 30.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 2.105968956,
-      "prediction_s": 2.6817712783813477,
-      "absolute_error_s": 0.5758023223813478
+      "actual_s": 2.139302289333333,
+      "prediction_s": 2.82478928565979,
+      "absolute_error_s": 0.6854869963264569
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3326,9 +3230,9 @@
       "height_cm": 30.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 1.342489151,
-      "prediction_s": 1.3381685018539429,
-      "absolute_error_s": 0.004320649146057232
+      "actual_s": 1.375822484333333,
+      "prediction_s": 1.3575952053070068,
+      "absolute_error_s": 0.01822727902632626
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3338,9 +3242,9 @@
       "height_cm": 5.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.2717521127,
-      "prediction_s": 0.29264047741889954,
-      "absolute_error_s": 0.020888364718899544
+      "actual_s": 0.305085446033333,
+      "prediction_s": 0.3353050649166107,
+      "absolute_error_s": 0.030219618883277732
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3350,9 +3254,9 @@
       "height_cm": 30.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.611299901,
-      "prediction_s": 1.673943281173706,
-      "absolute_error_s": 0.06264338017370608
+      "actual_s": 1.644633234333333,
+      "prediction_s": 1.7116575241088867,
+      "absolute_error_s": 0.06702428977555375
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3362,9 +3266,9 @@
       "height_cm": 10.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 0.4893580223,
-      "prediction_s": 0.44936317205429077,
-      "absolute_error_s": 0.0399948502457092
+      "actual_s": 0.522691355633333,
+      "prediction_s": 0.5145269632339478,
+      "absolute_error_s": 0.008164392399385267
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3374,9 +3278,9 @@
       "height_cm": 25.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 5.423570397,
-      "prediction_s": 7.376374244689941,
-      "absolute_error_s": 1.9528038476899416
+      "actual_s": 5.456903730333333,
+      "prediction_s": 7.305186748504639,
+      "absolute_error_s": 1.8482830181713057
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3386,9 +3290,9 @@
       "height_cm": 15.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 18.50209427,
-      "prediction_s": 34.36826705932617,
-      "absolute_error_s": 15.866172789326171
+      "actual_s": 18.535427603333332,
+      "prediction_s": 34.33768844604492,
+      "absolute_error_s": 15.80226084271159
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3398,9 +3302,9 @@
       "height_cm": 20.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.3584745423,
-      "prediction_s": 0.40474051237106323,
-      "absolute_error_s": 0.046265970071063256
+      "actual_s": 0.391807875633333,
+      "prediction_s": 0.3391900360584259,
+      "absolute_error_s": 0.05261783957490712
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3410,9 +3314,9 @@
       "height_cm": 20.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.2249397616,
-      "prediction_s": 0.2529844343662262,
-      "absolute_error_s": 0.028044672766226186
+      "actual_s": 0.258273094933333,
+      "prediction_s": 0.2637189030647278,
+      "absolute_error_s": 0.00544580813139478
     },
     {
       "dataset": "mesos_oros.csv",
@@ -3422,9 +3326,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.673807999,
-      "prediction_s": 2.0101466178894043,
-      "absolute_error_s": 0.3363386188894042
+      "actual_s": 1.707141332333333,
+      "prediction_s": 2.064854145050049,
+      "absolute_error_s": 0.35771281271671573
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3434,9 +3338,9 @@
       "height_cm": 15.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 0.7951488577,
-      "prediction_s": 0.7580238580703735,
-      "absolute_error_s": 0.037124999629626454
+      "actual_s": 0.862086998433333,
+      "prediction_s": 0.8037363290786743,
+      "absolute_error_s": 0.05835066935465871
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3446,9 +3350,9 @@
       "height_cm": 15.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.6744008803,
-      "prediction_s": 0.6948463916778564,
-      "absolute_error_s": 0.02044551137785644
+      "actual_s": 0.741163339933333,
+      "prediction_s": 0.7140905857086182,
+      "absolute_error_s": 0.02707275422471489
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3458,9 +3362,9 @@
       "height_cm": 30.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.4243094128,
-      "prediction_s": 0.3865053355693817,
-      "absolute_error_s": 0.037804077230618294
+      "actual_s": 0.457642746133333,
+      "prediction_s": 0.46084579825401306,
+      "absolute_error_s": 0.003203052120680061
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3470,9 +3374,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.6902810918,
-      "prediction_s": 0.7064191102981567,
-      "absolute_error_s": 0.01613801849815677
+      "actual_s": 0.723614425133333,
+      "prediction_s": 0.6982683539390564,
+      "absolute_error_s": 0.025346071194276565
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3482,9 +3386,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 1.17844755,
-      "prediction_s": 1.0649892091751099,
-      "absolute_error_s": 0.11345834082489015
+      "actual_s": 1.211780883333333,
+      "prediction_s": 1.1285747289657593,
+      "absolute_error_s": 0.08320615436757373
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3494,9 +3398,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 1.137763319,
-      "prediction_s": 1.061428427696228,
-      "absolute_error_s": 0.07633489130377202
+      "actual_s": 1.171096652333333,
+      "prediction_s": 1.1512093544006348,
+      "absolute_error_s": 0.019887297932698278
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3506,9 +3410,9 @@
       "height_cm": 25.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.3431796354,
-      "prediction_s": 0.35445162653923035,
-      "absolute_error_s": 0.01127199113923033
+      "actual_s": 0.376512968733333,
+      "prediction_s": 0.3886425495147705,
+      "absolute_error_s": 0.012129580781437499
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3518,9 +3422,9 @@
       "height_cm": 20.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 1.068838817,
-      "prediction_s": 0.8249011635780334,
-      "absolute_error_s": 0.2439376534219666
+      "actual_s": 1.102172150333333,
+      "prediction_s": 0.9358748197555542,
+      "absolute_error_s": 0.16629733057777885
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3530,9 +3434,9 @@
       "height_cm": 30.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 1.324175589,
-      "prediction_s": 1.3415708541870117,
-      "absolute_error_s": 0.017395265187011733
+      "actual_s": 1.357508922333333,
+      "prediction_s": 1.376990556716919,
+      "absolute_error_s": 0.019481634383585966
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3542,9 +3446,9 @@
       "height_cm": 10.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.2432462771,
-      "prediction_s": 0.23029370605945587,
-      "absolute_error_s": 0.01295257104054412
+      "actual_s": 0.276579610433333,
+      "prediction_s": 0.2834627330303192,
+      "absolute_error_s": 0.006883122596986202
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3554,9 +3458,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.2989184169,
-      "prediction_s": 0.3239804804325104,
-      "absolute_error_s": 0.025062063532510392
+      "actual_s": 0.332251750233333,
+      "prediction_s": 0.36630865931510925,
+      "absolute_error_s": 0.034056909081776277
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3566,9 +3470,9 @@
       "height_cm": 25.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 1.123204987,
-      "prediction_s": 1.2900978326797485,
-      "absolute_error_s": 0.1668928456797485
+      "actual_s": 1.156538320333333,
+      "prediction_s": 1.2563155889511108,
+      "absolute_error_s": 0.0997772686177778
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3578,9 +3482,9 @@
       "height_cm": 5.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.320124536,
-      "prediction_s": 0.39249709248542786,
-      "absolute_error_s": 0.07237255648542784
+      "actual_s": 0.353457869333333,
+      "prediction_s": 0.43421751260757446,
+      "absolute_error_s": 0.08075964327424145
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3590,9 +3494,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.7383669957,
-      "prediction_s": 0.6492184400558472,
-      "absolute_error_s": 0.0891485556441528
+      "actual_s": 0.771700329033333,
+      "prediction_s": 0.7103631496429443,
+      "absolute_error_s": 0.06133717939038863
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3602,9 +3506,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.4849479066,
-      "prediction_s": 0.5044084787368774,
-      "absolute_error_s": 0.019460572136877463
+      "actual_s": 0.518281239933333,
+      "prediction_s": 0.5395135879516602,
+      "absolute_error_s": 0.021232348018327185
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3614,9 +3518,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.7682797225,
-      "prediction_s": 0.7981023788452148,
-      "absolute_error_s": 0.02982265634521486
+      "actual_s": 0.801613055833333,
+      "prediction_s": 0.8140665292739868,
+      "absolute_error_s": 0.01245347344065384
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3626,9 +3530,9 @@
       "height_cm": 5.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.1738459407,
-      "prediction_s": 0.1555236130952835,
-      "absolute_error_s": 0.0183223276047165
+      "actual_s": 0.207179274033333,
+      "prediction_s": 0.1901392638683319,
+      "absolute_error_s": 0.01704001016500109
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3638,9 +3542,9 @@
       "height_cm": 20.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.3689691757,
-      "prediction_s": 0.35533854365348816,
-      "absolute_error_s": 0.013630632046511826
+      "actual_s": 0.402302509033333,
+      "prediction_s": 0.37267106771469116,
+      "absolute_error_s": 0.029631441318641816
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3650,9 +3554,9 @@
       "height_cm": 25.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 1.093338499,
-      "prediction_s": 1.1598623991012573,
-      "absolute_error_s": 0.06652390010125742
+      "actual_s": 1.126671832333333,
+      "prediction_s": 1.1734764575958252,
+      "absolute_error_s": 0.046804625262492294
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3662,9 +3566,9 @@
       "height_cm": 5.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.2635105088,
-      "prediction_s": 0.3176901936531067,
-      "absolute_error_s": 0.0541796848531067
+      "actual_s": 0.330485890633333,
+      "prediction_s": 0.35633888840675354,
+      "absolute_error_s": 0.02585299777342054
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3674,9 +3578,9 @@
       "height_cm": 5.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.2920265269,
-      "prediction_s": 0.34313592314720154,
-      "absolute_error_s": 0.05110939624720151
+      "actual_s": 0.325359860233333,
+      "prediction_s": 0.4041097164154053,
+      "absolute_error_s": 0.07874985618207225
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3686,9 +3590,9 @@
       "height_cm": 20.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.2517107479,
-      "prediction_s": 0.26951009035110474,
-      "absolute_error_s": 0.01779934245110476
+      "actual_s": 0.285044081233333,
+      "prediction_s": 0.30299410223960876,
+      "absolute_error_s": 0.01795002100627574
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3698,9 +3602,9 @@
       "height_cm": 20.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.26084609,
-      "prediction_s": 0.24826820194721222,
-      "absolute_error_s": 0.012577888052787756
+      "actual_s": 0.294179423333333,
+      "prediction_s": 0.30373626947402954,
+      "absolute_error_s": 0.009556846140696518
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3710,9 +3614,9 @@
       "height_cm": 30.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.3677940107,
-      "prediction_s": 0.38168394565582275,
-      "absolute_error_s": 0.013889934955822747
+      "actual_s": 0.401127344033333,
+      "prediction_s": 0.4154733419418335,
+      "absolute_error_s": 0.014345997908500496
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3722,9 +3626,9 @@
       "height_cm": 30.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 1.518584403,
-      "prediction_s": 1.395440936088562,
-      "absolute_error_s": 0.12314346691143796
+      "actual_s": 1.551917736333333,
+      "prediction_s": 1.4020631313323975,
+      "absolute_error_s": 0.1498546050009355
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3734,9 +3638,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 1.36507408,
-      "prediction_s": 1.1259607076644897,
-      "absolute_error_s": 0.23911337233551033
+      "actual_s": 1.398407413333333,
+      "prediction_s": 1.1642214059829712,
+      "absolute_error_s": 0.23418600735036188
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3746,9 +3650,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.673807999,
-      "prediction_s": 2.07517671585083,
-      "absolute_error_s": 0.40136871685083
+      "actual_s": 1.707141332333333,
+      "prediction_s": 2.117724657058716,
+      "absolute_error_s": 0.4105833247253827
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3758,9 +3662,9 @@
       "height_cm": 15.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 0.8452656025,
-      "prediction_s": 0.7371086478233337,
-      "absolute_error_s": 0.1081569546766663
+      "actual_s": 0.878598935833333,
+      "prediction_s": 0.7719368934631348,
+      "absolute_error_s": 0.10666204237019827
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3770,93 +3674,9 @@
       "height_cm": 5.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.1973766197,
-      "prediction_s": 0.20254874229431152,
-      "absolute_error_s": 0.005172122594311518
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "split": "validation",
-      "row": 158,
-      "liquid": "Νερό",
-      "height_cm": 15.0,
-      "shape": "Δίσκος",
-      "mass_g": 66.0,
-      "actual_s": 0.5949935578,
-      "prediction_s": 0.6571354269981384,
-      "absolute_error_s": 0.062141869198138466
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "split": "validation",
-      "row": 105,
-      "liquid": "Μέλι30",
-      "height_cm": 30.0,
-      "shape": "Κύβος",
-      "mass_g": 2.0,
-      "actual_s": 1.541170363,
-      "prediction_s": 1.32078218460083,
-      "absolute_error_s": 0.2203881783991699
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "split": "validation",
-      "row": 164,
-      "liquid": "Νερό",
-      "height_cm": 20.0,
-      "shape": "Δίσκος",
-      "mass_g": 66.0,
-      "actual_s": 0.9121678955,
-      "prediction_s": 0.753566563129425,
-      "absolute_error_s": 0.15860133237057494
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "split": "validation",
-      "row": 28,
-      "liquid": "Αλατόνερο",
-      "height_cm": 25.0,
-      "shape": "Κύβος",
-      "mass_g": 77.0,
-      "actual_s": 0.3251084991,
-      "prediction_s": 0.3110949993133545,
-      "absolute_error_s": 0.014013499786645511
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "split": "validation",
-      "row": 3,
-      "liquid": "Αλατόνερο",
-      "height_cm": 5.0,
-      "shape": "Κύβος",
-      "mass_g": 2.0,
-      "actual_s": 0.2574832286,
-      "prediction_s": 0.26546844840049744,
-      "absolute_error_s": 0.007985219800497434
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "split": "validation",
-      "row": 91,
-      "liquid": "Μέλι30",
-      "height_cm": 20.0,
-      "shape": "Δίσκος",
-      "mass_g": 11.0,
-      "actual_s": 1.095022518,
-      "prediction_s": 1.0691603422164917,
-      "absolute_error_s": 0.025862175783508246
-    },
-    {
-      "dataset": "mesos_oros_nomeli.csv",
-      "split": "validation",
-      "row": 8,
-      "liquid": "Αλατόνερο",
-      "height_cm": 10.0,
-      "shape": "Δίσκος",
-      "mass_g": 66.0,
-      "actual_s": 0.4291585139,
-      "prediction_s": 0.4206913709640503,
-      "absolute_error_s": 0.00846714293594969
+      "actual_s": 0.230709953033333,
+      "prediction_s": 0.23700278997421265,
+      "absolute_error_s": 0.006292836940879648
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3866,9 +3686,9 @@
       "height_cm": 20.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.8718019365,
-      "prediction_s": 0.7702234983444214,
-      "absolute_error_s": 0.10157843815557865
+      "actual_s": 0.905135269833333,
+      "prediction_s": 0.8977960348129272,
+      "absolute_error_s": 0.007339235020405788
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3878,9 +3698,9 @@
       "height_cm": 10.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 0.5817890692,
-      "prediction_s": 0.515716016292572,
-      "absolute_error_s": 0.06607305290742793
+      "actual_s": 0.649752877133333,
+      "prediction_s": 0.5459265112876892,
+      "absolute_error_s": 0.10382636584564375
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3890,9 +3710,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.1629232988,
-      "prediction_s": 0.16051942110061646,
-      "absolute_error_s": 0.0024038776993835498
+      "actual_s": 0.196256632133333,
+      "prediction_s": 0.20240937173366547,
+      "absolute_error_s": 0.006152739600332469
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3902,9 +3722,9 @@
       "height_cm": 10.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 0.6078365391,
-      "prediction_s": 0.5066133141517639,
-      "absolute_error_s": 0.1012232249482361
+      "actual_s": 0.641169872433333,
+      "prediction_s": 0.5336463451385498,
+      "absolute_error_s": 0.1075235272947832
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3914,9 +3734,9 @@
       "height_cm": 5.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.2123970179,
-      "prediction_s": 0.2551884651184082,
-      "absolute_error_s": 0.04279144721840819
+      "actual_s": 0.245730351233333,
+      "prediction_s": 0.2857781648635864,
+      "absolute_error_s": 0.04004781363025342
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3926,9 +3746,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.2056519334,
-      "prediction_s": 0.23218682408332825,
-      "absolute_error_s": 0.02653489068332826
+      "actual_s": 0.238985266733333,
+      "prediction_s": 0.26493752002716064,
+      "absolute_error_s": 0.025952253293827637
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3938,9 +3758,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.308727563,
-      "prediction_s": 1.2598508596420288,
-      "absolute_error_s": 0.04887670335797112
+      "actual_s": 1.342060896333333,
+      "prediction_s": 1.2686784267425537,
+      "absolute_error_s": 0.07338246959077921
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3950,9 +3770,9 @@
       "height_cm": 30.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 1.329391114,
-      "prediction_s": 1.320830225944519,
-      "absolute_error_s": 0.008560888055481053
+      "actual_s": 1.362724447333333,
+      "prediction_s": 1.4200079441070557,
+      "absolute_error_s": 0.057283496773722575
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3962,9 +3782,9 @@
       "height_cm": 5.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.184795171,
-      "prediction_s": 0.18745563924312592,
-      "absolute_error_s": 0.0026604682431259075
+      "actual_s": 0.218128504333333,
+      "prediction_s": 0.2221398502588272,
+      "absolute_error_s": 0.0040113459254942085
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3974,9 +3794,9 @@
       "height_cm": 10.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.2969729654,
-      "prediction_s": 0.27392271161079407,
-      "absolute_error_s": 0.023050253789205943
+      "actual_s": 0.330306298733333,
+      "prediction_s": 0.3063076138496399,
+      "absolute_error_s": 0.02399868488369311
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3986,9 +3806,9 @@
       "height_cm": 20.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.3031429536,
-      "prediction_s": 0.30518803000450134,
-      "absolute_error_s": 0.002045076404501356
+      "actual_s": 0.336476286933333,
+      "prediction_s": 0.3302372395992279,
+      "absolute_error_s": 0.0062390473341050745
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -3998,9 +3818,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.2053209945,
-      "prediction_s": 0.20516687631607056,
-      "absolute_error_s": 0.00015411818392943588
+      "actual_s": 0.238654327833333,
+      "prediction_s": 0.2537119686603546,
+      "absolute_error_s": 0.015057640827021601
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4010,9 +3830,9 @@
       "height_cm": 30.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.4027880708,
-      "prediction_s": 0.38883814215660095,
-      "absolute_error_s": 0.013949928643399057
+      "actual_s": 0.436121404133333,
+      "prediction_s": 0.42082759737968445,
+      "absolute_error_s": 0.015293806753648553
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4022,9 +3842,9 @@
       "height_cm": 30.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.6825370401,
-      "prediction_s": 0.5594870448112488,
-      "absolute_error_s": 0.12304999528875127
+      "actual_s": 0.715870373433333,
+      "prediction_s": 0.5989795923233032,
+      "absolute_error_s": 0.11689078111002982
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4034,9 +3854,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.2357714044,
-      "prediction_s": 0.2216358631849289,
-      "absolute_error_s": 0.014135541215071101
+      "actual_s": 0.269104737733333,
+      "prediction_s": 0.26059064269065857,
+      "absolute_error_s": 0.008514095042674419
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4046,9 +3866,9 @@
       "height_cm": 15.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.2290185175,
-      "prediction_s": 0.24395664036273956,
-      "absolute_error_s": 0.014938122862739572
+      "actual_s": 0.262351850833333,
+      "prediction_s": 0.26456207036972046,
+      "absolute_error_s": 0.0022102195363874477
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4058,9 +3878,9 @@
       "height_cm": 15.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.2864366217,
-      "prediction_s": 0.2695556581020355,
-      "absolute_error_s": 0.016880963597964482
+      "actual_s": 0.319769955033333,
+      "prediction_s": 0.3101177215576172,
+      "absolute_error_s": 0.00965223347571581
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4070,9 +3890,9 @@
       "height_cm": 15.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.3148137998,
-      "prediction_s": 0.3209652304649353,
-      "absolute_error_s": 0.006151430664935287
+      "actual_s": 0.348147133133333,
+      "prediction_s": 0.361503005027771,
+      "absolute_error_s": 0.013355871894437987
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4082,9 +3902,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.326194333,
-      "prediction_s": 1.4579600095748901,
-      "absolute_error_s": 0.13176567657489024
+      "actual_s": 1.359527666333333,
+      "prediction_s": 1.4410369396209717,
+      "absolute_error_s": 0.08150927328763857
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4094,9 +3914,9 @@
       "height_cm": 20.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 0.9563964481,
-      "prediction_s": 0.9384536147117615,
-      "absolute_error_s": 0.017942833388238544
+      "actual_s": 0.989729781433333,
+      "prediction_s": 1.0131075382232666,
+      "absolute_error_s": 0.02337775678993359
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4106,9 +3926,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.8986855925,
-      "prediction_s": 1.088804841041565,
-      "absolute_error_s": 0.19011924854156492
+      "actual_s": 0.965499722733333,
+      "prediction_s": 1.0834710597991943,
+      "absolute_error_s": 0.11797133706586138
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4118,9 +3938,9 @@
       "height_cm": 15.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 0.9871414278,
-      "prediction_s": 1.2206757068634033,
-      "absolute_error_s": 0.2335342790634033
+      "actual_s": 1.020474761133333,
+      "prediction_s": 1.2179890871047974,
+      "absolute_error_s": 0.19751432597146446
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4130,9 +3950,9 @@
       "height_cm": 30.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.4788445952,
-      "prediction_s": 0.45190128684043884,
-      "absolute_error_s": 0.026943308359561158
+      "actual_s": 0.512177928533333,
+      "prediction_s": 0.4905913174152374,
+      "absolute_error_s": 0.021586611118095567
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4142,9 +3962,9 @@
       "height_cm": 30.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.554414379,
-      "prediction_s": 1.5468136072158813,
-      "absolute_error_s": 0.007600771784118665
+      "actual_s": 1.587747712333333,
+      "prediction_s": 1.5274326801300049,
+      "absolute_error_s": 0.06031503220332812
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4154,9 +3974,9 @@
       "height_cm": 10.0,
       "shape": "Κύβος",
       "mass_g": 77.0,
-      "actual_s": 0.1679211292,
-      "prediction_s": 0.17632520198822021,
-      "absolute_error_s": 0.008404072788220224
+      "actual_s": 0.201254462533333,
+      "prediction_s": 0.2108989804983139,
+      "absolute_error_s": 0.009644517964980892
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4166,9 +3986,9 @@
       "height_cm": 25.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.3299586496,
-      "prediction_s": 0.3871954679489136,
-      "absolute_error_s": 0.05723681834891359
+      "actual_s": 0.363291982933333,
+      "prediction_s": 0.40280017256736755,
+      "absolute_error_s": 0.039508189634034574
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4178,9 +3998,9 @@
       "height_cm": 25.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.291141002,
-      "prediction_s": 1.4676191806793213,
-      "absolute_error_s": 0.17647817867932125
+      "actual_s": 1.357867616333333,
+      "prediction_s": 1.4164379835128784,
+      "absolute_error_s": 0.058570367179545446
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4190,9 +4010,9 @@
       "height_cm": 20.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.049379325,
-      "prediction_s": 0.956763505935669,
-      "absolute_error_s": 0.09261581906433114
+      "actual_s": 1.082712658333333,
+      "prediction_s": 0.9589844942092896,
+      "absolute_error_s": 0.12372816412404353
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4202,9 +4022,9 @@
       "height_cm": 5.0,
       "shape": "Σφαίρα",
       "mass_g": 13.0,
-      "actual_s": 0.08427802422,
-      "prediction_s": 0.0908060371875763,
-      "absolute_error_s": 0.0065280129675762966
+      "actual_s": 0.117611357553333,
+      "prediction_s": 0.12818831205368042,
+      "absolute_error_s": 0.010576954500347416
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4214,9 +4034,9 @@
       "height_cm": 25.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.2753930911,
-      "prediction_s": 0.31574493646621704,
-      "absolute_error_s": 0.040351845366217054
+      "actual_s": 0.308726424433333,
+      "prediction_s": 0.3380468189716339,
+      "absolute_error_s": 0.02932039453830093
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4226,9 +4046,9 @@
       "height_cm": 5.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.3250149052,
-      "prediction_s": 0.46431875228881836,
-      "absolute_error_s": 0.13930384708881838
+      "actual_s": 0.358348238533333,
+      "prediction_s": 0.40616580843925476,
+      "absolute_error_s": 0.047817569905921786
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4238,9 +4058,9 @@
       "height_cm": 20.0,
       "shape": "Δίσκος",
       "mass_g": 66.0,
-      "actual_s": 0.9519753667,
-      "prediction_s": 0.7954334616661072,
-      "absolute_error_s": 0.15654190503389287
+      "actual_s": 0.985308700033333,
+      "prediction_s": 0.8815433979034424,
+      "absolute_error_s": 0.10376530212989066
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4250,9 +4070,9 @@
       "height_cm": 30.0,
       "shape": "Κύβος",
       "mass_g": 2.0,
-      "actual_s": 2.622568015,
-      "prediction_s": 2.0028765201568604,
-      "absolute_error_s": 0.6196914948431398
+      "actual_s": 2.655901348333333,
+      "prediction_s": 2.1429455280303955,
+      "absolute_error_s": 0.5129558203029374
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4262,9 +4082,9 @@
       "height_cm": 20.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.258245049,
-      "prediction_s": 1.6259678602218628,
-      "absolute_error_s": 0.3677228112218629
+      "actual_s": 1.291578382333333,
+      "prediction_s": 1.686028242111206,
+      "absolute_error_s": 0.39444985977787295
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4274,9 +4094,9 @@
       "height_cm": 30.0,
       "shape": "Δίσκος",
       "mass_g": 11.0,
-      "actual_s": 1.499231578,
-      "prediction_s": 1.6408812999725342,
-      "absolute_error_s": 0.14164972197253412
+      "actual_s": 1.566004481333333,
+      "prediction_s": 1.6170120239257812,
+      "absolute_error_s": 0.05100754259244833
     },
     {
       "dataset": "mesos_oros_nomeli.csv",
@@ -4286,17 +4106,25 @@
       "height_cm": 25.0,
       "shape": "Σφαίρα",
       "mass_g": 59.0,
-      "actual_s": 0.3044445338,
-      "prediction_s": 0.29342755675315857,
-      "absolute_error_s": 0.011016977046841403
+      "actual_s": 0.337777867133333,
+      "prediction_s": 0.3430270552635193,
+      "absolute_error_s": 0.005249188130186266
     }
   ],
   "warnings": [],
   "deployment_model": {
     "path": "xgboost_model.joblib",
     "dataset": "mesos_oros.csv",
-    "dataset_sha256": "2211792043ec7983dfa4e127299829c82cc77434b75e2eeefed5cc6cd607a619",
+    "dataset_sha256": "b9d19183c806a9c85730b0bd2e017e08a4356775ffae8b6ebda0fcb620f07f32",
     "train_rows": [
+      33,
+      170,
+      201,
+      82,
+      175,
+      152,
+      24,
+      84,
       13,
       130,
       207,
@@ -4425,16 +4253,16 @@
       106
     ],
     "validation": {
-      "mae": 0.6143005060203871,
-      "mse": 3.8822146250208958,
-      "rmse": 1.9703336329213121,
-      "r2": 0.8280190954980876
+      "mae": 0.6043829160730932,
+      "mse": 4.161693949436327,
+      "rmse": 2.0400230266926713,
+      "r2": 0.8459635528358119
     },
     "test": {
-      "mae": 0.6889598968104487,
-      "mse": 6.777281158530899,
-      "rmse": 2.6033211785200265,
-      "r2": 0.4760668814719413
+      "mae": 0.7075913077162266,
+      "mse": 6.8477749321161765,
+      "rmse": 2.616825353766693,
+      "r2": 0.4706172001369925
     }
   }
 }

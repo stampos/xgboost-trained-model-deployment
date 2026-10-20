@@ -33,8 +33,8 @@ def main():
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "protocol": {
             "method": "shared_holdout",
-            "train_fraction": 1 - TEST_SIZE - VALIDATION_SIZE,
-            "validation_fraction": VALIDATION_SIZE,
+            "train_fraction": round((1 - TEST_SIZE) * (1 - VALIDATION_SIZE), 2),
+            "validation_fraction": round((1 - TEST_SIZE) * VALIDATION_SIZE, 2),
             "test_fraction": TEST_SIZE,
             "shuffle": True,
             "random_state": SEED,

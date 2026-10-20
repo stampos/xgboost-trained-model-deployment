@@ -1,6 +1,7 @@
 """One reproducible experiment protocol for every regression model.
 
-Each dataset has its own fixed 60/20/20 train/validation/test rows. All models
+Each dataset has an outer 80/20 split, then an 80/20 split of the outer 80%.
+All models
 see the same rows within a dataset. The test set is never used for fitting.
 """
 
@@ -29,7 +30,7 @@ FEATURES = ["Υγρό", "Ύψος (cm)", "Σχήμα", "Μάζα (g)"]
 TARGET = "Μέσος χρόνος (s)"
 SEED = 42
 TEST_SIZE = 0.20
-VALIDATION_SIZE = 0.20
+VALIDATION_SIZE = 0.20  # Share of the 80% remaining after the test split.
 
 
 def split_rows(df):
@@ -40,7 +41,7 @@ def split_rows(df):
     )
     train, validation = train_test_split(
         train_val,
-        test_size=VALIDATION_SIZE / (1 - TEST_SIZE),
+        test_size=VALIDATION_SIZE,
         shuffle=True,
         random_state=SEED,
     )

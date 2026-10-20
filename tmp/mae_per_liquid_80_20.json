@@ -4,43 +4,43 @@
   "seed": 42,
   "train_count": 168,
   "test_count": 42,
-  "overall_mae_seconds": 0.3100677344056083,
+  "overall_mae_seconds": 0.310067733128366,
   "per_liquid": [
     {
       "liquid": "Αλατόνερο",
       "count": 6,
-      "mean_actual_seconds": 0.7308054723500002,
-      "mae_seconds": 0.03377630740832748
+      "mean_actual_seconds": 0.764138805683333,
+      "mae_seconds": 0.03377639118596718
     },
     {
       "liquid": "Λάδι",
       "count": 5,
-      "mean_actual_seconds": 0.8515116551800002,
-      "mae_seconds": 0.027262227299789422
+      "mean_actual_seconds": 0.884844988513333,
+      "mae_seconds": 0.02726222014723225
     },
     {
       "liquid": "Μέλι100",
       "count": 7,
-      "mean_actual_seconds": 6.5007143749,
-      "mae_seconds": 1.6360895183735202
+      "mean_actual_seconds": 6.534047708233333,
+      "mae_seconds": 1.6360893940552614
     },
     {
       "liquid": "Μέλι30",
       "count": 7,
-      "mean_actual_seconds": 0.7225611480857143,
-      "mae_seconds": 0.028511041992018364
+      "mean_actual_seconds": 0.7558944814190474,
+      "mae_seconds": 0.02851103376090067
     },
     {
       "liquid": "Μέλι70",
       "count": 9,
-      "mean_actual_seconds": 0.7315574591444445,
-      "mae_seconds": 0.09075685298947127
+      "mean_actual_seconds": 0.7648907924777775,
+      "mae_seconds": 0.09075682914761346
     },
     {
       "liquid": "Νερό",
       "count": 8,
-      "mean_actual_seconds": 0.5562776856625,
-      "mae_seconds": 0.02685753307782822
+      "mean_actual_seconds": 0.589611018995833,
+      "mae_seconds": 0.026857610812219206
     }
   ]
 }
