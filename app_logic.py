@@ -9,6 +9,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 from evaluation import DATASETS, FEATURES, SEED, TARGET, TEST_SIZE, make_models, metrics
+from app_i18n import translate
 
 
 DATASET_OPTIONS = {
@@ -17,6 +18,21 @@ DATASET_OPTIONS = {
 }
 LIQUID, HEIGHT, SHAPE, MASS = FEATURES
 MODEL_NAMES = tuple(make_models())
+
+
+class AppValidationError(ValueError):
+    """Keep validation messages translatable without changing model inputs."""
+
+    def __init__(self, message_key, **values):
+        self.message_key = message_key
+        self.values = values
+        super().__init__(self.localized_message("el"))
+
+    def localized_message(self, language):
+        values = self.values.copy()
+        if "axis" in values:
+            values["axis"] = translate(language, values["axis"])
+        return translate(language, self.message_key, **values)
 
 
 @dataclass
@@ -32,7 +48,7 @@ def train_experiment(df, model_name):
     """Fit only on the outer 80%, using the same split for every model."""
     models = make_models()
     if model_name not in models:
-        raise ValueError("Επίλεξε ένα από τα διαθέσιμα μοντέλα.")
+        raise AppValidationError("invalid_model")
     train, test = train_test_split(
         np.arange(len(df)), test_size=TEST_SIZE, shuffle=True, random_state=SEED
     )
@@ -52,10 +68,7 @@ def _axis_points(values, value, label):
     if len(exact):
         return [(float(exact[0]), 1.0)]
     if value < values[0] or value > values[-1]:
-        raise ValueError(
-            f"Η παρεμβολή για {label} απαιτεί τιμή από {values[0]:g} "
-            f"έως {values[-1]:g} για το συγκεκριμένο υγρό και σχήμα."
-        )
+        raise AppValidationError("interpolation_bounds", axis=label, low=values[0], high=values[-1])
     upper = int(np.searchsorted(values, value))
     low, high = values[upper - 1], values[upper]
     weight = float((value - low) / (high - low))
@@ -66,28 +79,28 @@ def prediction_points(df, liquid, height, shape, mass, interpolate=False):
     """Build model inputs; interpolation uses only existing liquid/shape anchors."""
     height, mass = float(height), float(mass)
     if not np.isfinite(height) or not np.isfinite(mass):
-        raise ValueError("Το ύψος και η μάζα πρέπει να είναι πεπερασμένοι αριθμοί.")
+        raise AppValidationError("nonfinite_inputs")
     grid = df.loc[(df[LIQUID] == liquid) & (df[SHAPE] == shape)]
     if grid.empty:
-        raise ValueError("Δεν υπάρχουν δεδομένα για αυτό το υγρό και σχήμα.")
+        raise AppValidationError("unknown_combination")
     shape_data = df.loc[df[SHAPE] == shape]
     if not shape_data[HEIGHT].min() <= height <= shape_data[HEIGHT].max():
-        raise ValueError("Το ύψος πρέπει να βρίσκεται εντός του πειραματικού εύρους.")
+        raise AppValidationError("height_bounds")
     if not shape_data[MASS].min() <= mass <= shape_data[MASS].max():
-        raise ValueError("Η μάζα πρέπει να βρίσκεται εντός του εύρους για το σχήμα.")
+        raise AppValidationError("mass_bounds")
     if liquid == "Μέλι100" and shape == "Κύβος" and np.isclose(mass, 2, rtol=0, atol=1e-9):
-        raise ValueError("Δεν υπάρχουν μετρήσεις για Κύβο 2 g στο Μέλι100.")
+        raise AppValidationError("missing_honey_cube")
 
     if not interpolate:
         return pd.DataFrame([[liquid, height, shape, mass]], columns=FEATURES), np.array([1.0])
 
-    masses = _axis_points(grid[MASS], mass, "τη μάζα (g)")
+    masses = _axis_points(grid[MASS], mass, "mass_axis")
     # Use heights shared by the mass anchors, so every corner actually exists.
     height_sets = [set(grid.loc[grid[MASS] == value, HEIGHT]) for value, _ in masses]
     shared_heights = set.intersection(*height_sets)
     if not shared_heights:
-        raise ValueError("Δεν υπάρχουν κοινά μετρημένα ύψη για την παρεμβολή.")
-    heights = _axis_points(list(shared_heights), height, "το ύψος (cm)")
+        raise AppValidationError("no_shared_heights")
+    heights = _axis_points(list(shared_heights), height, "height_axis")
     rows, weights = [], []
     for (h, h_weight), (m, m_weight) in product(heights, masses):
         rows.append([liquid, h, shape, m])
@@ -100,7 +113,7 @@ def predict_time(model, df, liquid, height, shape, mass, interpolate=False):
     points, weights = prediction_points(df, liquid, height, shape, mass, interpolate)
     predictions = np.asarray(model.predict(points), dtype=float)
     if not np.all(np.isfinite(predictions)):
-        raise ValueError("Το μοντέλο δεν επέστρεψε έγκυρο χρόνο.")
+        raise AppValidationError("invalid_time")
     prediction = float(np.dot(predictions, weights))
     anchors = points.copy()
     anchors["Πρόβλεψη μοντέλου (s)"] = predictions

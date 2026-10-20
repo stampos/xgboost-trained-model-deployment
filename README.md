@@ -5,6 +5,8 @@ the existing virtual environment, use `.venv\Scripts\python.exe -m streamlit run
 
 The app lets users:
 
+- Switch between Greek and English, including category names, tables, and
+  validation messages, while keeping their selections and trained model.
 - Select a dataset with Meli100 (210 rows) or without it (180 rows). Meli30 and
   Meli70 remain available in both datasets.
 - Select Linear Regression, Polynomial Ridge, Random Forest, XGBoost, or Neural
