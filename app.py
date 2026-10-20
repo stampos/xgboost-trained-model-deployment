@@ -1,672 +1,172 @@
-import streamlit as st
+import hashlib
+
 import pandas as pd
-import numpy as np
-import joblib
+import streamlit as st
 
-
-# ============================================================
-# PAGE SETTINGS
-# ============================================================
-
-st.set_page_config(
-    page_title="Πρόβλεψη Χρόνου Κίνησης",
-    page_icon="🔬",
-    layout="centered"
+from app_logic import (
+    DATASET_OPTIONS,
+    HEIGHT,
+    LIQUID,
+    MASS,
+    MODEL_NAMES,
+    SHAPE,
+    predict_time,
+    prediction_points,
+    train_experiment,
 )
 
 
-# ============================================================
-# LOAD MODEL
-# ============================================================
-
-@st.cache_resource
-def load_model():
-    return joblib.load("xgboost_model.joblib")
-
-
-model = load_model()
-
-
-# ============================================================
-# CONSTANTS
-# ============================================================
-
-KNOWN_HEIGHTS = np.array(
-    [5, 10, 15, 20, 25, 30],
-    dtype=float
+st.set_page_config(page_title="Πρόβλεψη Χρόνου Κίνησης", page_icon="🔬", layout="centered")
+st.title("🔬 Πρόβλεψη Χρόνου Κίνησης")
+st.write(
+    "Επίλεξε δεδομένα και μοντέλο, εκπαίδευσέ το και δοκίμασε διαφορετικά "
+    "ύψη και μάζες, με ή χωρίς παρεμβολή."
 )
 
+st.subheader("1. Δεδομένα και εκπαίδευση")
+dataset_col, model_col = st.columns(2)
+with dataset_col:
+    dataset_name = st.selectbox("Dataset", list(DATASET_OPTIONS), key="dataset")
+with model_col:
+    model_name = st.selectbox(
+        "Μοντέλο", MODEL_NAMES, index=MODEL_NAMES.index("XGBoost"), key="model"
+    )
 
-OBJECTS = {
-    "Κύβος 2 g": ("Κύβος", 2),
-    "Κύβος 77 g": ("Κύβος", 77),
-    "Σφαίρα 13 g": ("Σφαίρα", 13),
-    "Σφαίρα 59 g": ("Σφαίρα", 59),
-    "Δίσκος 11 g": ("Δίσκος", 11),
-    "Δίσκος 66 g": ("Δίσκος", 66)
-}
+try:
+    df = pd.read_csv(DATASET_OPTIONS[dataset_name], encoding="utf-8-sig")
+except (OSError, ValueError) as exc:
+    st.error(f"Δεν ήταν δυνατή η ανάγνωση του dataset: {exc}")
+    st.stop()
 
-
-LIQUIDS = [
-    "Νερό",
-    "Αλατόνερο",
-    "Λάδι",
-    "Μέλι30",
-    "Μέλι70",
-    "Μέλι100"
+signature = (dataset_name, model_name, hashlib.sha256(df.to_csv(index=False).encode()).hexdigest())
+liquids = [
+    name for name in ["Νερό", "Αλατόνερο", "Λάδι", "Μέλι30", "Μέλι70", "Μέλι100"]
+    if name in set(df[LIQUID])
 ]
-
-
-# ============================================================
-# INVALID COMBINATIONS
-# ============================================================
-
-INVALID_COMBINATIONS = {
-    (
-        "Μέλι100",
-        "Κύβος",
-        2
-    ):
-        "Ο Κύβος 2 g δεν έπεσε στο Μέλι100 και δεν υπάρχουν "
-        "πειραματικές μετρήσεις για αυτόν τον συνδυασμό."
-}
-
-
-# ============================================================
-# PREDICTION FUNCTION
-# ============================================================
-
-def predict_with_interpolation(
-    model,
-    liquid,
-    height,
-    shape,
-    mass
-):
-    """
-    Για γνωστό πειραματικό ύψος χρησιμοποιεί απευθείας
-    την πρόβλεψη του XGBoost.
-
-    Για ενδιάμεσο ύψος χρησιμοποιεί τις XGBoost προβλέψεις
-    στα δύο γειτονικά γνωστά ύψη και εφαρμόζει
-    γραμμική παρεμβολή.
-
-    Για μη διαθέσιμους πειραματικούς συνδυασμούς
-    δεν πραγματοποιείται πρόβλεψη.
-    """
-
-    height = float(height)
-
-    # ========================================================
-    # ΕΛΕΓΧΟΣ ΜΗ ΕΓΚΥΡΩΝ ΣΥΝΔΥΑΣΜΩΝ
-    # ========================================================
-
-    combination = (
-        liquid,
-        shape,
-        mass
-    )
-
-    if combination in INVALID_COMBINATIONS:
-        raise ValueError(
-            INVALID_COMBINATIONS[combination]
-        )
-
-    # ========================================================
-    # ΕΛΕΓΧΟΣ ΟΡΙΩΝ ΥΨΟΥΣ
-    # ========================================================
-
-    if (
-        height < KNOWN_HEIGHTS.min()
-        or height > KNOWN_HEIGHTS.max()
-    ):
-        raise ValueError(
-            "Το ύψος πρέπει να βρίσκεται μεταξύ 5 και 30 cm."
-        )
-
-    # ========================================================
-    # ΠΕΡΙΠΤΩΣΗ 1:
-    # ΓΝΩΣΤΟ ΠΕΙΡΑΜΑΤΙΚΟ ΥΨΟΣ
-    # ========================================================
-
-    if np.any(
-        np.isclose(
-            KNOWN_HEIGHTS,
-            height
-        )
-    ):
-
-        input_data = pd.DataFrame({
-            "Υγρό": [liquid],
-            "Ύψος (cm)": [height],
-            "Σχήμα": [shape],
-            "Μάζα (g)": [mass]
-        })
-
-        prediction = model.predict(
-            input_data
-        )[0]
-
-        return float(prediction), {
-            "method": "direct"
-        }
-
-    # ========================================================
-    # ΠΕΡΙΠΤΩΣΗ 2:
-    # ΕΝΔΙΑΜΕΣΟ ΥΨΟΣ -> INTERPOLATION
-    # ========================================================
-
-    upper_index = np.searchsorted(
-        KNOWN_HEIGHTS,
-        height
-    )
-
-    lower_height = (
-        KNOWN_HEIGHTS[
-            upper_index - 1
-        ]
-    )
-
-    upper_height = (
-        KNOWN_HEIGHTS[
-            upper_index
-        ]
-    )
-
-    # --------------------------------------------------------
-    # XGBoost predictions στα δύο γειτονικά ύψη
-    # --------------------------------------------------------
-
-    anchor_data = pd.DataFrame({
-        "Υγρό": [
-            liquid,
-            liquid
-        ],
-
-        "Ύψος (cm)": [
-            lower_height,
-            upper_height
-        ],
-
-        "Σχήμα": [
-            shape,
-            shape
-        ],
-
-        "Μάζα (g)": [
-            mass,
-            mass
-        ]
-    })
-
-
-    predictions = model.predict(
-        anchor_data
-    )
-
-
-    lower_prediction = float(
-        predictions[0]
-    )
-
-    upper_prediction = float(
-        predictions[1]
-    )
-
-
-    # ========================================================
-    # LINEAR INTERPOLATION
-    # ========================================================
-
-    weight = (
-        (height - lower_height)
-        /
-        (upper_height - lower_height)
-    )
-
-
-    prediction = (
-        lower_prediction
-        +
-        weight
-        *
-        (
-            upper_prediction
-            -
-            lower_prediction
-        )
-    )
-
-
-    interpolation_info = {
-
-        "method": "interpolation",
-
-        "lower_height":
-            float(lower_height),
-
-        "upper_height":
-            float(upper_height),
-
-        "lower_prediction":
-            lower_prediction,
-
-        "upper_prediction":
-            upper_prediction,
-
-        "weight":
-            float(weight)
-    }
-
-
-    return (
-        float(prediction),
-        interpolation_info
-    )
-
-
-# ============================================================
-# HEADER
-# ============================================================
-
-st.title(
-    "🔬 Πρόβλεψη Χρόνου Κίνησης"
-)
-
-
-st.write(
-    """
-    Η εφαρμογή χρησιμοποιεί ένα εκπαιδευμένο μοντέλο
-    **XGBoost** για την πρόβλεψη του χρόνου κίνησης
-    ενός αντικειμένου μέσα σε διαφορετικά υγρά.
-
-    Για ύψη που βρίσκονται μεταξύ δύο πειραματικών
-    μετρήσεων εφαρμόζεται **γραμμική παρεμβολή**
-    μεταξύ των αντίστοιχων προβλέψεων του XGBoost.
-    """
-)
-
-
-# ============================================================
-# INPUTS
-# ============================================================
-
-st.subheader(
-    "Εισαγωγή χαρακτηριστικών"
-)
-
-
-# ------------------------------------------------------------
-# Liquid
-# ------------------------------------------------------------
-
-liquid = st.selectbox(
-    "Υγρό",
-    LIQUIDS
-)
-
-
-# ------------------------------------------------------------
-# Height
-# ------------------------------------------------------------
-
-height = st.number_input(
-    "Ύψος (cm)",
-    min_value=5.0,
-    max_value=30.0,
-    value=15.0,
-    step=0.5,
-    format="%.1f"
-)
-
-
-# ------------------------------------------------------------
-# Object
-# ------------------------------------------------------------
-
-object_choice = st.selectbox(
-    "Αντικείμενο",
-    list(
-        OBJECTS.keys()
-    )
-)
-
-
-shape, mass = (
-    OBJECTS[
-        object_choice
-    ]
-)
-
-
-# ============================================================
-# CHECK CURRENT COMBINATION
-# ============================================================
-
-current_combination = (
-    liquid,
-    shape,
-    mass
-)
-
-
-combination_is_valid = (
-    current_combination
-    not in INVALID_COMBINATIONS
-)
-
-
-if not combination_is_valid:
-
-    st.warning(
-        "⚠️ Ο συγκεκριμένος συνδυασμός δεν είναι διαθέσιμος."
-    )
-
-    st.error(
-        INVALID_COMBINATIONS[
-            current_combination
-        ]
-    )
-
-else:
-
-    st.caption(
-        "Μπορούν να χρησιμοποιηθούν και ενδιάμεσες "
-        "τιμές ύψους μεταξύ 5 και 30 cm."
-    )
-
-
-# ============================================================
-# SHOW CURRENT INPUT
-# ============================================================
-
-st.divider()
-
-
-st.write(
-    "### Επιλεγμένα χαρακτηριστικά"
-)
-
-
-col1, col2 = st.columns(2)
-
-
-with col1:
-
-    st.write(
-        f"**Υγρό:** {liquid}"
-    )
-
-    st.write(
-        f"**Ύψος:** {height:.1f} cm"
-    )
-
-
-with col2:
-
-    st.write(
-        f"**Σχήμα:** {shape}"
-    )
-
-    st.write(
-        f"**Μάζα:** {mass} g"
-    )
-
-
-# ============================================================
-# PREDICTION
-# ============================================================
-
-st.divider()
-
-
-# Το button απενεργοποιείται αν ο συνδυασμός είναι μη έγκυρος
-prediction_button = st.button(
-    "Υπολογισμός πρόβλεψης",
-    type="primary",
-    use_container_width=True,
-    disabled=not combination_is_valid
-)
-
-
-if prediction_button:
-
-    try:
-
-        prediction, info = (
-            predict_with_interpolation(
-                model=model,
-                liquid=liquid,
-                height=height,
-                shape=shape,
-                mass=mass
-            )
-        )
-
-
-        # ====================================================
-        # MAIN RESULT
-        # ====================================================
-
-        st.success(
-            f"Προβλεπόμενος χρόνος: "
-            f"{prediction:.5f} s"
-        )
-
-
-        st.metric(
-            label="Εκτιμώμενος χρόνος",
-            value=f"{prediction:.5f} s"
-        )
-
-
-        # ====================================================
-        # DIRECT XGBOOST
-        # ====================================================
-
-        if info["method"] == "direct":
-
-            st.info(
-                f"Το ύψος {height:.1f} cm "
-                "αντιστοιχεί σε πειραματικό ύψος "
-                "του dataset. Χρησιμοποιήθηκε "
-                "απευθείας η πρόβλεψη του XGBoost."
-            )
-
-
-        # ====================================================
-        # INTERPOLATION
-        # ====================================================
-
-        elif (
-            info["method"]
-            ==
-            "interpolation"
-        ):
-
-            lower_height = (
-                info[
-                    "lower_height"
-                ]
-            )
-
-            upper_height = (
-                info[
-                    "upper_height"
-                ]
-            )
-
-            lower_prediction = (
-                info[
-                    "lower_prediction"
-                ]
-            )
-
-            upper_prediction = (
-                info[
-                    "upper_prediction"
-                ]
-            )
-
-
-            st.info(
-                f"Το ύψος {height:.1f} cm "
-                "δεν είναι ένα από τα αρχικά "
-                "πειραματικά ύψη. "
-                "Η τελική τιμή υπολογίστηκε "
-                "με γραμμική παρεμβολή μεταξύ "
-                f"{lower_height:g} cm και "
-                f"{upper_height:g} cm."
-            )
-
-
-            st.write(
-                "### Υπολογισμός παρεμβολής"
-            )
-
-
-            interp_col1, interp_col2 = (
-                st.columns(2)
-            )
-
-
-            with interp_col1:
-
-                st.metric(
-                    label=(
-                        "XGBoost στα "
-                        f"{lower_height:g} cm"
-                    ),
-
-                    value=(
-                        f"{lower_prediction:.5f} s"
-                    )
-                )
-
-
-            with interp_col2:
-
-                st.metric(
-                    label=(
-                        "XGBoost στα "
-                        f"{upper_height:g} cm"
-                    ),
-
-                    value=(
-                        f"{upper_prediction:.5f} s"
-                    )
-                )
-
-
-            st.write(
-                f"""
-                Η πρόβλεψη για **{height:.1f} cm**
-                βρίσκεται μεταξύ των δύο παραπάνω
-                προβλέψεων.
-                """
-            )
-
-
-    # ========================================================
-    # INVALID COMBINATION
-    # ========================================================
-
-    except ValueError as e:
-
-        st.error(
-            f"⚠️ Μη διαθέσιμη πρόβλεψη\n\n{e}"
-        )
-
-
-    # ========================================================
-    # OTHER ERRORS
-    # ========================================================
-
-    except Exception as e:
-
-        st.error(
-            "Παρουσιάστηκε απρόβλεπτο σφάλμα "
-            f"κατά την πρόβλεψη: {e}"
-        )
-
-
-# ============================================================
-# METHODOLOGY INFORMATION
-# ============================================================
-
-st.divider()
-
-
-with st.expander(
-    "ℹ️ Πώς υπολογίζεται η πρόβλεψη;"
-):
-
-    st.write(
-        """
-        Τα πειραματικά ύψη που χρησιμοποιήθηκαν
-        για την εκπαίδευση είναι:
-
-        **5, 10, 15, 20, 25 και 30 cm**
-
-        Αν ο χρήστης επιλέξει ένα από αυτά τα ύψη,
-        χρησιμοποιείται απευθείας η πρόβλεψη
-        του XGBoost.
-
-        Αν επιλεγεί ενδιάμεσο ύψος, όπως για
-        παράδειγμα **17.5 cm**, η εφαρμογή:
-
-        1. Υπολογίζει την πρόβλεψη του XGBoost
-        στο αμέσως μικρότερο πειραματικό ύψος.
-
-        2. Υπολογίζει την πρόβλεψη του XGBoost
-        στο αμέσως μεγαλύτερο πειραματικό ύψος.
-
-        3. Εφαρμόζει γραμμική παρεμβολή μεταξύ
-        των δύο τιμών.
-
-        Η εφαρμογή πραγματοποιεί προβλέψεις μόνο
-        εντός του πειραματικού εύρους **5–30 cm**.
-
-        Επίσης, δεν πραγματοποιείται πρόβλεψη για
-        συνδυασμούς για τους οποίους δεν υπάρχουν
-        πειραματικές μετρήσεις και δεν παρατηρήθηκε
-        κίνηση του αντικειμένου.
-        """
-    )
-
-
-# ============================================================
-# DATASET LIMITATIONS
-# ============================================================
-
-with st.expander(
-    "⚠️ Περιορισμοί δεδομένων"
-):
-
-    st.write(
-        """
-        Για τον συνδυασμό:
-
-        **Μέλι100 + Κύβος 2 g**
-
-        δεν υπάρχουν μετρήσεις χρόνου στο dataset,
-        καθώς ο συγκεκριμένος κύβος δεν έπεσε στο υγρό.
-
-        Για αυτόν τον λόγο η εφαρμογή δεν επιτρέπει
-        την παραγωγή πρόβλεψης για τη συγκεκριμένη
-        περίπτωση.
-        """
-    )
-
-
-# ============================================================
-# FOOTER
-# ============================================================
-
-st.divider()
-
-
 st.caption(
-    "Εφαρμογή πρόβλεψης βασισμένη σε XGBoost "
-    "και γραμμική παρεμβολή για ενδιάμεσα ύψη."
+    f"{len(df)} εγγραφές · {len(liquids)} υγρά. "
+    "Η επιλογή dataset αφορά το Μέλι100· τα Μέλι30 και Μέλι70 περιλαμβάνονται και στα δύο."
 )
+st.caption(
+    "Κάθε μοντέλο εκπαιδεύεται στο ίδιο 80% των εγγραφών. "
+    "Το υπόλοιπο 20% κρατείται για έλεγχο και δεν χρησιμοποιείται στην εκπαίδευση."
+)
+
+if st.button("Εκπαίδευση μοντέλου", type="primary", key="train"):
+    try:
+        with st.spinner(f"Εκπαίδευση {model_name}…"):
+            result = train_experiment(df, model_name)
+        st.session_state["experiment"] = {"signature": signature, "result": result}
+    except Exception as exc:
+        st.session_state.pop("experiment", None)
+        st.error(f"Η εκπαίδευση δεν ολοκληρώθηκε: {exc}")
+
+experiment = st.session_state.get("experiment")
+ready = experiment is not None and experiment["signature"] == signature
+if ready:
+    result = experiment["result"]
+    st.success(
+        f"Εκπαιδευμένο μοντέλο: {model_name} · {dataset_name} · "
+        f"{len(result.train_rows)} εγγραφές εκπαίδευσης / {len(result.test_rows)} ελέγχου."
+    )
+    st.caption(f"Χρόνος εκπαίδευσης: {result.fit_seconds:.2f} s. Μετρικές στο 20% ελέγχου:")
+    mae_col, rmse_col, r2_col = st.columns(3)
+    mae_col.metric("MAE (s)", f"{result.scores['mae']:.4f}")
+    rmse_col.metric("RMSE (s)", f"{result.scores['rmse']:.4f}")
+    r2_col.metric("R²", f"{result.scores['r2']:.4f}")
+    st.caption("Οι μετρικές αφορούν τις απευθείας προβλέψεις του μοντέλου, χωρίς παρεμβολή.")
+elif experiment is not None:
+    st.info("Άλλαξες dataset ή μοντέλο. Πάτησε «Εκπαίδευση μοντέλου» για τη νέα επιλογή.")
+else:
+    st.info("Πάτησε «Εκπαίδευση μοντέλου» για να ενεργοποιήσεις τις προβλέψεις.")
+
+with st.expander("Προβολή δεδομένων"):
+    st.dataframe(df, hide_index=True, width="stretch")
+
+st.divider()
+st.subheader("2. Χαρακτηριστικά και πρόβλεψη")
+liquid_col, shape_col = st.columns(2)
+with liquid_col:
+    liquid = st.selectbox("Υγρό", liquids, key="liquid")
+with shape_col:
+    shape = st.selectbox("Σχήμα", ["Κύβος", "Σφαίρα", "Δίσκος"], key="shape")
+
+shape_data = df.loc[df[SHAPE] == shape]
+height_col, mass_col = st.columns(2)
+with height_col:
+    height = st.number_input(
+        "Ύψος (cm)", min_value=float(shape_data[HEIGHT].min()),
+        max_value=float(shape_data[HEIGHT].max()), value=15.0, step=0.5,
+        format="%.2f", key="height",
+    )
+with mass_col:
+    mass = st.number_input(
+        "Μάζα (g)", min_value=float(shape_data[MASS].min()),
+        max_value=float(shape_data[MASS].max()), value=float(shape_data[MASS].min()),
+        step=0.5, format="%.2f", key=f"mass_{shape}",
+    )
+
+grid = df.loc[(df[LIQUID] == liquid) & (df[SHAPE] == shape)]
+measured_heights = ", ".join(f"{value:g}" for value in sorted(grid[HEIGHT].unique()))
+measured_masses = ", ".join(f"{value:g}" for value in sorted(grid[MASS].unique()))
+st.caption(f"Μετρημένα ύψη: {measured_heights} cm · Μετρημένες μάζες: {measured_masses} g.")
+st.caption("Μπορείς να πληκτρολογήσεις και ενδιάμεσες τιμές ύψους και μάζας.")
+
+mode = st.radio(
+    "Τρόπος πρόβλεψης", ["Χωρίς παρεμβολή", "Με παρεμβολή"],
+    horizontal=True, key="prediction_mode",
+)
+interpolate = mode == "Με παρεμβολή"
+if interpolate:
+    st.caption(
+        "Γραμμική παρεμβολή στο ύψος και στη μάζα, ανάμεσα στις προβλέψεις "
+        "του μοντέλου στα γειτονικά μετρημένα σημεία."
+    )
+else:
+    st.caption("Το μοντέλο προβλέπει απευθείας για το ύψος και τη μάζα που επέλεξες.")
+
+valid_inputs = True
+try:
+    prediction_points(df, liquid, height, shape, mass, interpolate)
+except ValueError as exc:
+    valid_inputs = False
+    st.warning(str(exc))
+
+if liquid == "Μέλι100" and shape == "Κύβος":
+    st.caption(
+        "Στο Μέλι100 υπάρχουν μετρήσεις κύβου μόνο στα 77 g. "
+        "Η παρεμβολή υποστηρίζεται μόνο σε αυτή τη μάζα."
+    )
+
+if st.button("Υπολογισμός πρόβλεψης", disabled=not (ready and valid_inputs), key="predict"):
+    try:
+        prediction, anchors = predict_time(
+            result.model, df, liquid, height, shape, mass, interpolate
+        )
+        st.metric("Εκτιμώμενος χρόνος", f"{prediction:.5f} s")
+        if prediction < 0:
+            st.warning("Το μοντέλο επέστρεψε αρνητικό χρόνο, που δεν έχει φυσική ερμηνεία.")
+        if interpolate and len(anchors) > 1:
+            st.info("Η πρόβλεψη προέκυψε με παρεμβολή στις προβλέψεις του μοντέλου.")
+            with st.expander("Σημεία και συντελεστές παρεμβολής", expanded=True):
+                st.dataframe(anchors, hide_index=True, width="stretch")
+        elif interpolate:
+            st.info("Το σημείο είναι μετρημένος συνδυασμός· χρησιμοποιήθηκε απευθείας το μοντέλο.")
+        else:
+            st.info("Χρησιμοποιήθηκε η απευθείας πρόβλεψη του μοντέλου, χωρίς παρεμβολή.")
+    except Exception as exc:
+        st.error(f"Δεν ήταν δυνατή η πρόβλεψη: {exc}")
+
+st.divider()
+with st.expander("Πώς να ερμηνεύσεις τις δοκιμές"):
+    st.write(
+        "Οι ενδιάμεσες μάζες και τα ενδιάμεσα ύψη είναι εκτιμήσεις, όχι νέες πειραματικές "
+        "μετρήσεις. Η παρεμβολή χρησιμοποιεί τις προβλέψεις του επιλεγμένου μοντέλου, "
+        "όχι τους καταγεγραμμένους χρόνους. Οι επιλογές περιορίζονται στο εύρος ύψους "
+        "και μάζας που υπάρχει για κάθε σχήμα."
+    )
+    st.write(
+        "Οι δοκιμές μοντέλων εδώ είναι διερευνητικές. Για επιλογή μοντέλου με "
+        "διασταυρούμενη επικύρωση χρησιμοποίησε την ξεχωριστή ανάλυση του έργου."
+    )
+st.caption("Η εκπαίδευση ισχύει για την τρέχουσα συνεδρία της εφαρμογής.")
